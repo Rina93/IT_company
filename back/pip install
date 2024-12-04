@@ -1,0 +1,1 @@
+pip install fastapi sqlalchemy databases psycopg2-binary passlib bcrypt pydantic jwt uvicorn asyncpg python-jose python-multipart
