@@ -1,45 +1,33 @@
 /* <link rel="stylesheet" href="C:\Projects\Hackaton\IT_company\Front\static\css\main.css"> */
 
-/* Общий стиль для всего сайта */
-body {
-    display: flex;
-    flex-direction: column; /* Вертикальное расположение блоков */
-    min-height: 100vh; /* Высота равна высоте окна браузера */
-    margin: 0; /* Убираем внешние отступы */
-}
 
-/* Контент страницы */
-main {
-    flex: 1; /* Растягиваем основное содержимое, чтобы футер оставался внизу */
-}
 
-/* Стили для футера */
-footer {
-    background-color: #343a40; /* Тёмный фон футера */
-    color: white; /* Белый текст */
-    text-align: center; /* Центрирование текста */
-    padding: 1rem 0; /* Отступы внутри футера */
-}
-
-/* Пример со скруглением */
-img {
+/* about.html*/
+/*Скругление картинки */
+.imgAboutUs {
     border-radius: 20px; /* Скругление углов на 20 пикселей */
 }
 
+
+
+/* index.html*/
+/* Стиль для героя */
+.hero {
+    padding-top: 120px; /* Отступ сверху */
+    padding-bottom: 80px; /* Отступ снизу */
+    min-height: 600px; /* Минимальная высота блока */
+}
+
+
+
+/* Стиль для портфеля в категории услуг*/
 .text-brown {
     color: #8B4513; /* Коричневый цвет */
 }
 
-.icon-orange {
-    color: #ffb52a; /* Задаём оранжевый цвет */
-}
 
-/* Изменить цвет стрелок на серый */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: grey;  /* Цвет стрелок */
-}
 
+/*Логотипы компаний-партнёров*/
 .img-logo-2-company {
     width: 100px; /* Ширина логотипа */
     height: 100px; /* Высота логотипа */
@@ -47,7 +35,6 @@ img {
     margin-bottom: 10px; /* Отступ снизу */
     
 }
-
 .img-logo-3-company {
     width: 160px; /* Ширина логотипа */
     height: 100px; /* Высота логотипа */
@@ -55,3 +42,29 @@ img {
     margin-bottom: 10px; /* Отступ снизу */
     
 }
+
+
+/* Стиль для карточек в категории услуг*/
+.category-card h5 {
+    font-size: 1.25rem; /* Размер заголовков карточек */
+    font-weight: bold;
+}
+.category-card p {
+    font-size: 1rem; /* Размер текста карточек */
+}
+.category-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+
+
+/* Стиль для стрелок в карусели*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: grey;  /* Цвет стрелок */
+}
+

@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Подключение Bootstrap -->
+    <!-- Подключение стилей CSS, BCSS, B-icons -->
+    <link href="C:\Users\Sever\OneDrive\Dokumente\GitHub\IT_company\Front\static\css\main.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="C:\Projects\Hackaton\IT_company\Front\static\css\main.css">
-    <title>Document</title>
 </head>
+
+
 <body>
-<!-- Шапка сайта -->
-<header class="bg-dark py-3">
+<header class="bg-dark py-3"> <!-- Шапка сайта -->
     <div class="container d-flex justify-content-between align-items-center">
         <div class="header-nav">
             <a href="index.html" class="me-4 text-white text-decoration-none">
@@ -35,8 +35,8 @@
     </div>
 </header>
 
-<!-- Основной контент -->
-<main class="container my-5">
+
+<main class="container my-5"> <!-- Основной контент -->
     <h1 class="text-center mb-4">Личный кабинет</h1>
     <div class="row">
         <!-- Меню -->
@@ -54,67 +54,71 @@
             </div>
         </aside>
 
+
         <!-- Содержимое -->
         <section class="col-md-9">
             <div class="tab-content">
-            <!-- Профиль -->
-<div class="tab-pane fade show active" id="profile">
-    <h2>Профиль</h2>
-    <form id="profileForm">
-        <div class="mb-3">
-            <label for="fullName" class="form-label">ФИО</label>
-            <input type="text" id="fullName" class="form-control" value="Иван Иванов" disabled>
-        </div>
-        <div class="mb-3">
-            <label for="inn" class="form-label">ИНН</label>
-            <input type="text" id="inn" class="form-control" value="1234567890" disabled>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">E-mail</label>
-            <input type="email" id="email" class="form-control" value="ivanov@example.com" disabled>
-        </div>
-        <div class="mb-3">
-            <label for="phone" class="form-label">Номер телефона</label>
-            <input type="text" id="phone" class="form-control" value="+7 (123) 456-78-90" disabled>
-        </div>
-        <!-- Кнопка Редактировать/Сохранить -->
-        <div class="d-flex justify-content-end mt-3">
-            <button type="button" id="editProfileButton" class="btn btn-primary">Редактировать</button>
-        </div>
-    </form>
-</div>
-
-<!-- JavaScript -->
-<script>
-    document.getElementById('editProfileButton').addEventListener('click', function() {
-        const isEditing = document.getElementById('fullName').disabled;
-
-        // Переключаем режим редактирования
-        document.getElementById('fullName').disabled = !isEditing;
-        document.getElementById('inn').disabled = !isEditing;
-        document.getElementById('email').disabled = !isEditing;
-        document.getElementById('phone').disabled = !isEditing;
-
-        // Меняем текст кнопки
-        if (isEditing) {
-            this.textContent = 'Сохранить';
-            this.classList.remove('btn-primary');
-            this.classList.add('btn-success');
-        } else {
-            this.textContent = 'Редактировать';
-            this.classList.remove('btn-success');
-            this.classList.add('btn-primary');
             
-            // Здесь можно добавить код для отправки данных на сервер или сохранения изменений
-            // Например: saveProfileData();
-        }
-    });
-</script>
+            <!-- Профиль -->
+            <div class="tab-pane fade show active" id="profile">
+                <h2>Профиль</h2>
+                <form id="profileForm">
+
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">ФИО</label>
+                        <input type="text" id="fullName" class="form-control" value="Иван Иванов" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inn" class="form-label">ИНН</label>
+                        <input type="text" id="inn" class="form-control" value="1234567890" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" class="form-control" value="ivanov@example.com" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Номер телефона</label>
+                        <input type="text" id="phone" class="form-control" value="+7 (123) 456-78-90" disabled>
+                    </div>
+
+                    <!-- Кнопка Редактировать/Сохранить -->
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="button" id="editProfileButton" class="btn btn-primary">Редактировать</button>
+                    </div>
+
+                </form>
+            </div>
 
 
+            <!-- JavaScript -->
+            <script> 
+                document.getElementById('editProfileButton').addEventListener('click', function() {
+                    const isEditing = document.getElementById('fullName').disabled;
+
+                    // Переключаем режим редактирования
+                    document.getElementById('fullName').disabled = !isEditing;
+                    document.getElementById('inn').disabled = !isEditing;
+                    document.getElementById('email').disabled = !isEditing;
+                    document.getElementById('phone').disabled = !isEditing;
+
+                    // Меняем текст кнопки
+                    if (isEditing) {
+                        this.textContent = 'Сохранить';
+                        this.classList.remove('btn-primary');
+                        this.classList.add('btn-success');
+                    } else {
+                        this.textContent = 'Редактировать';
+                        this.classList.remove('btn-success');
+                        this.classList.add('btn-primary');
+                        
+                        // Здесь можно добавить код для отправки данных на сервер или сохранения изменений
+                        // Например: saveProfileData();
+                    }
+                });
+            </script>
 
                 <!-- Настройки -->
-                <div class="tab-pane fade" id="settings">
+                <div class="tab-pane fade" id="settings"> 
                     <h2>Настройки</h2>
                     <form>
                         <div class="mb-3">
@@ -132,15 +136,13 @@
                         <button type="submit" class="btn btn-primary">Сохранить изменения</button>
                     </form>
                 </div>
+                
             </div>
         </section>
+
     </div>
 </main>
-    
-        <!-- Подключение Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-</main>
+
 
 <!-- Футер -->
 <div class="container-fluid bg-dark text-white mt-auto">
@@ -160,5 +162,8 @@
     </footer>
 </div>
 
+
+<!-- Подключение Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
