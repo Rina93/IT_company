@@ -1,0 +1,57 @@
+/* <link rel="stylesheet" href="C:\Projects\Hackaton\IT_company\Front\static\css\main.css"> */
+
+/* Общий стиль для всего сайта */
+body {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение блоков */
+    min-height: 100vh; /* Высота равна высоте окна браузера */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+/* Контент страницы */
+main {
+    flex: 1; /* Растягиваем основное содержимое, чтобы футер оставался внизу */
+}
+
+/* Стили для футера */
+footer {
+    background-color: #343a40; /* Тёмный фон футера */
+    color: white; /* Белый текст */
+    text-align: center; /* Центрирование текста */
+    padding: 1rem 0; /* Отступы внутри футера */
+}
+
+/* Пример со скруглением */
+img {
+    border-radius: 20px; /* Скругление углов на 20 пикселей */
+}
+
+.text-brown {
+    color: #8B4513; /* Коричневый цвет */
+}
+
+.icon-orange {
+    color: #ffb52a; /* Задаём оранжевый цвет */
+}
+
+/* Изменить цвет стрелок на серый */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: grey;  /* Цвет стрелок */
+}
+
+.img-logo-2-company {
+    width: 100px; /* Ширина логотипа */
+    height: 100px; /* Высота логотипа */
+    margin-right: 10px; /* Отступ справа */
+    margin-bottom: 10px; /* Отступ снизу */
+    
+}
+
+.img-logo-3-company {
+    width: 160px; /* Ширина логотипа */
+    height: 100px; /* Высота логотипа */
+    margin-right: 10px; /* Отступ справа */
+    margin-bottom: 10px; /* Отступ снизу */
+    
+}

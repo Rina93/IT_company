@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - IT Услуги Самары</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Projects\Hackaton\IT_company\Front\static\css\main.css">
+    <style>
+        /* Основные стили текста */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px; /* Базовый размер текста */
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-size: 2.5rem; /* Размер заголовка h1 */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem; /* Размер заголовка h2 */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1rem; /* Обычный текст */
+            margin-bottom: 15px;
+        }
+
+        .category-card h5 {
+            font-size: 1.25rem; /* Размер заголовков карточек */
+            font-weight: bold;
+        }
+
+        .category-card p {
+            font-size: 1rem; /* Размер текста карточек */
+        }
+
+        .category-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- Шапка сайта -->
+<header class="bg-dark py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="header-nav">
+            <a href="index.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-house-fill"></i> Главная
+            </a>
+            <a href="catalog.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-list-ul"></i> Каталог
+            </a>
+            <a href="company.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-building"></i> Партнёры
+            </a>
+            <a href="about.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-info-circle"></i> О нас
+            </a>
+        </div>
+        <div class="header-actions">
+            <button id="loginButton" type="button" class="btn btn-outline-light me-2 d-none" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+            <button id="registerButton" type="button" class="btn btn-warning me-2 d-none" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+            <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary">Личный кабинет</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Модальные окна -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Войти</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Контент страницы -->
+    <main>
+        <!-- Блок герой -->
+        <style>
+            .hero {
+                padding-top: 120px; /* Отступ сверху */
+                padding-bottom: 80px; /* Отступ снизу */
+                min-height: 600px; /* Минимальная высота блока */
+            }
+        </style>
+        
+        <section class="hero bg-primary text-white text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold">Найдите IT-компанию Самары для вашего проекта</h1>
+                <p class="lead">Лучшие профессионалы в одном месте. Быстро, удобно, надёжно.</p>
+                <a href="#services" class="btn btn-light btn-lg">Посмотреть услуги</a>
+            </div>
+        </section>
+        <!-- Модуль 1 -->
+        <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="pb-2 border-bottom">Мы упрощаем каждый этап вашего исследовательского процесса</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <i class="bi bi-card-checklist fs-2"></i>
+                </div>
+                <div>
+                  <h3 class="fs-2 text-body-emphasis">Выберите категорию</h3>
+                  <p>Выберите тип компании, которую вы ищете</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <i class="bi bi-chat-right-text fs-2"></i>
+                </div>
+                <div>
+                  <h3 class="fs-2 text-body-emphasis">Читайте отзывы и рейтинги</h3>
+                  <p>Ознакомьтесь с проверенными отзывами и рейтингами компаний</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <i class="bi bi-award fs-2"></i>
+                </div>
+                <div>
+                  <h3 class="fs-2 text-body-emphasis">Список лучших</h3>
+                  <p>Выберите компанию, которая лучше всего соответствует вашим требованиям</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <i class="bi bi-star-fill fs-2"></i>
+                </div>
+                <div>
+                  <h3 class="fs-2 text-body-emphasis">Оставить отзыв</h3>
+                  <p>Оставляйте отзывы о компаниях, чтобы помочь другим принять правильные решения</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Блок услуг -->
+        <section id="services" class="pd-5">
+            <div class="container text-center">
+                <h2 class="mb-4">Услуги партнёров</h2>
+                <div class="row">
+                    <!-- Разработка -->
+                    <div class="col-md-3 mb-4">
+                        <i class="bi bi-code-slash fs-1 text-primary"></i>
+                        <h4 class="mt-3">Разработка</h4>
+                        <p>Создание сайтов, мобильных приложений и программного обеспечения любой сложности.</p>
+                    </div>
+                    <!-- Дизайн -->
+                    <div class="col-md-3 mb-4">
+                        <i class="bi bi-palette fs-1 text-success"></i>
+                        <h4 class="mt-3">Дизайн</h4>
+                        <p>Проектирование удобных интерфейсов и создание стильных графических решений для ваших продуктов.</p>
+                    </div>
+                    <!-- Тестирование -->
+                    <div class="col-md-3 mb-4">
+                        <i class="bi bi-bug fs-1 text-danger"></i>
+                        <h4 class="mt-3">Тестирование</h4>
+                        <p>Обеспечение качества вашего продукта с помощью функционального, нагрузочного и UX-тестирования.</p>
+                    </div>
+                    <!-- DevOps -->
+                    <div class="col-md-3 mb-4">
+                        <i class="bi bi-gear-wide-connected fs-1 text-warning"></i>
+                        <h4 class="mt-3">DevOps</h4>
+                        <p>Настройка CI/CD процессов, автоматизация и управление инфраструктурой.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Дата инженерия -->
+                    <div class="col-md-3 mb-4">
+                        <i class="bi bi-database fs-1 text-info"></i>
+                        <h4 class="mt-3">Дата инженерия</h4>
+                        <p>Работа с большими данными, настройка потоков данных и создание хранилищ.</p>
+                    </div>
+                    <!-- Маркетинг -->
+                    <div class="col-md-3 mb-4">
+                        <i class="bi bi-megaphone fs-1 text-purple"></i>
+                        <h4 class="mt-3">Маркетинг</h4>
+                        <p>Продвижение ваших продуктов через контент, SMM, SEO и рекламные кампании.</p>
+                    </div>
+                    <!-- Менеджмент -->
+                    <div class="col-md-3 mb-4">
+                        <i class="bi bi-briefcase fs-1 text-brown"></i>
+                        <h4 class="mt-3">Менеджмент</h4>
+                        <p>Планирование, управление проектами и контроль за их выполнением.</p>
+                    </div>
+                    <!-- Кибербезопасность -->
+                    <div class="col-md-3 mb-4">
+                        <i class="bi bi-shield-lock fs-1 text-primary"></i>
+                        <h4 class="mt-3">Кибербезопасность</h4>
+                        <p>Защита данных и инфраструктуры от угроз.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+<!-- Блок партнёров -->
+<section id="partners" class="py-5">
+    <div class="container text-center">
+        <h2>Наши партнёры</h2>
+        <div class="row mt-4">
+            <!-- Первый столбец -->
+            <div class="col-6 col-md-3 partner-column">
+                <img src="C:\Projects\Hackaton\IT_company\Front\static\logo-1.png" 
+                    alt="Партнёр 1" 
+                    class="img-fluid img-logo-3-company">
+            </div>
+            <!-- Второй столбец -->
+            <div class="col-6 col-md-3 partner-column">
+                <img src="C:\Projects\Hackaton\IT_company\Front\static\logo-3.png" 
+                    alt="Партнёр 2" 
+                    class="img-fluid img-logo-3-company">
+            </div>
+            <!-- Третий столбец -->
+            <div class="col-6 col-md-3 partner-column">
+                <img src="C:\Projects\Hackaton\IT_company\Front\static\logo-2.png" 
+                    alt="Партнёр 3" 
+                    class="img-fluid img-logo-2-company">
+            </div>
+            <!-- Четвёртый столбец -->
+            <div class="col-6 col-md-3 partner-column">
+                <img src="C:\Projects\Hackaton\IT_company\Front\static\logo-4.jpg" 
+                    alt="Партнёр 4" 
+                    class="img-fluid img-logo-2-company">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Блок отзывов (карусель) -->
+<section class="mb-5">
+    <h2 class="text-center mb-4">Отзывы о наших партнёрах</h2>
+    <div class="container">
+        <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Отзыв 1 -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-between">
+                        <!-- Карточка 1 -->
+                        <div class="card review-card">
+                            <img src="path-to-image.jpg" class="card-img-top" alt="Клиент 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Организация 1</h5>
+                                <p class="card-text">"Отличная команда, благодаря им наша задача была решена быстро и качественно!"</p>
+                            </div>
+                        </div>
+                        <!-- Карточка 2 -->
+                        <div class="card review-card">
+                            <img src="path-to-image.jpg" class="card-img-top" alt="Клиент 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Организация 2</h5>
+                                <p class="card-text">"Очень довольны работой, помогли решить нашу проблему на высшем уровне!"</p>
+                            </div>
+                        </div>
+                        <!-- Карточка 3 -->
+                        <div class="card review-card">
+                            <img src="path-to-image.jpg" class="card-img-top" alt="Клиент 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Организация 3</h5>
+                                <p class="card-text">"Прекрасный подход к клиенту и профессиональная работа!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Отзыв 2 -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between">
+                        <!-- Карточка 4 -->
+                        <div class="card review-card">
+                            <img src="path-to-image.jpg" class="card-img-top" alt="Клиент 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Организация 4</h5>
+                                <p class="card-text">"Решили нашу задачу быстро, с минимальными затратами!"</p>
+                            </div>
+                        </div>
+                        <!-- Карточка 5 -->
+                        <div class="card review-card">
+                            <img src="path-to-image.jpg" class="card-img-top" alt="Клиент 5">
+                            <div class="card-body">
+                                <h5 class="card-title">Организация 5</h5>
+                                <p class="card-text">"Они просто лучшие в своём деле, всегда с нами!"</p>
+                            </div>
+                        </div>
+                        <!-- Карточка 6 -->
+                        <div class="card review-card">
+                            <img src="path-to-image.jpg" class="card-img-top" alt="Клиент 6">
+                            <div class="card-body">
+                                <h5 class="card-title">Организация 6</h5>
+                                <p class="card-text">"Очень довольны, всегда на связи и готовы помочь!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Управление каруселью -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: gray;"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: gray;"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- CSS для выравнивания карточек -->
+<style>
+    /* Устанавливаем одинаковую ширину для карточек */
+    .review-card {
+        width: 30%; /* Ограничиваем ширину карточек */
+        margin-right: 10px;
+        flex-grow: 0; /* Чтобы карточки не растягивались */
+    }
+
+    /* Убираем лишний отступ у последней карточки */
+    .carousel-item .review-card:last-child {
+        margin-right: 0;
+    }
+
+    .carousel-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Расположение кнопок */
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+    }
+</style>
+
+
+</main>
+
+    <!-- Футер -->
+<div class="container-fluid bg-dark text-white mt-auto">
+    <footer class="bg-dark py-2">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link px-2 text-white">Вернуться на главную</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link px-2 text-white">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-white">FAQs</a>
+            </li>
+        </ul>
+        <p class="text-center">© 2024 IT услуги Самары.</p>
+    </footer>
+</div>
+
+    <!-- Подключение Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

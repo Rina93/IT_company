@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог IT-услуг</title>
+    <!-- Подключение Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .category-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .filter-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<header class="bg-dark py-3"><!-- Шапка сайта -->
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="header-nav">
+            <a href="index.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-house-fill"></i> Главная
+            </a>
+            <a href="catalog.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-list-ul"></i> Каталог
+            </a>
+            <a href="company.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-building"></i> Организации
+            </a>
+            <a href="about.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-info-circle"></i> О нас
+            </a>
+        </div>
+        <div class="header-actions">
+            <button id="loginButton" type="button" class="btn btn-outline-light me-2 d-none" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+            <button id="registerButton" type="button" class="btn btn-warning me-2 d-none" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+            <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary">Личный кабинет</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Модальные окна -->
+    <!-- Модальное окно Войти -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Войти</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно Регистрация -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Поиск по каталогу -->
+        <section class="py-3">
+            <div class="container">
+                <h2>Поиск по IT-услугам</h2>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Введите название компании или услугу" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Поиск</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Фильтры для каталога -->
+        <section class="py-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Категория</h5>
+                        <select class="form-select">
+                            <option>Все категории</option>
+                            <option>Облачные услуги</option>
+                            <option>Сетевые решения</option>
+                            <option>Консалтинг</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Рейтинг</h5>
+                        <select class="form-select">
+                            <option>Все рейтинги</option>
+                            <option>5 звезд</option>
+                            <option>от 4 звезд</option>
+                            <option>от 3 звезд</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Стоимость проекта</h5>
+                        <select class="form-select">
+                            <option>Стоимость</option>
+                            <option>До 100 тыс.</option>
+                            <option>До 300 тыс.</option>
+                            <option>До 500 тыс.</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container py-5">
+            <h2 class="text-center mb-4">Наши партнёры</h2>
+            <div class="row g-4"> <!-- g-4 добавляет отступы между карточками -->
+                <!-- Карточка 1 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Заголовок услуги и логотип с названием -->
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="card-title mb-0">Разработка веб-сайтов</h5>
+                                <div class="d-flex align-items-center">
+                                    <img src="path-to-logo.jpg" alt="Логотип компании" class="img-fluid me-3" style="width: 40px; height: 40px;">
+                                    <span class="h6 mb-0">Компания 1</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-primary btn-sm me-2">Посмотреть профиль</button>
+                                <button class="btn btn-outline-secondary btn-sm">Посетить веб-сайт</button>
+                            </div>
+                        </div>
+        
+                        <!-- Оценка и количество отзывов -->
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-warning text-dark me-2">4.5</span>
+                                    <span class="text-muted">15 отзывов</span>
+                                </div>
+                            </div>
+        
+                            <!-- Цена -->
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="text-muted">Минимальная цена: <strong>50000 руб.</strong></div>
+                            </div>
+        
+                            <!-- Описание услуги -->
+                            <p class="card-text">
+                                Мы предоставляем полный спектр услуг по разработке веб-сайтов, включая создание индивидуальных дизайнов, интеграцию с внешними сервисами и оптимизацию для мобильных устройств. Наша команда профессионалов работает с каждым клиентом индивидуально, чтобы гарантировать лучший результат.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Карточка 2 (пример) -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Заголовок услуги и логотип с названием -->
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="card-title mb-0">Разработка мобильных приложений</h5>
+                                <div class="d-flex align-items-center">
+                                    <img src="path-to-logo2.jpg" alt="Логотип компании" class="img-fluid me-3" style="width: 40px; height: 40px;">
+                                    <span class="h6 mb-0">Компания 2</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-primary btn-sm me-2">Посмотреть профиль</button>
+                                <button class="btn btn-outline-secondary btn-sm">Посетить веб-сайт</button>
+                            </div>
+                        </div>
+        
+                        <!-- Оценка и количество отзывов -->
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-warning text-dark me-2">4.8</span>
+                                    <span class="text-muted">25 отзывов</span>
+                                </div>
+                            </div>
+        
+                            <!-- Цена -->
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="text-muted">Минимальная цена: <strong>$800</strong></div>
+                            </div>
+                            
+                            <!-- Описание услуги -->
+                            <p class="card-text">
+                                Мы специализируемся на создании высококачественных мобильных приложений для iOS и Android. Наша цель — создать удобный и функциональный продукт, который будет отвечать всем требованиям заказчика.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+                <!-- Пагинация -->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center pt-5">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Назад</a>
+                        </li>
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Вперёд</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 IT Услуги Самары. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Подключение Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
