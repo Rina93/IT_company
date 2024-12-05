@@ -1,0 +1,1464 @@
+[
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Query",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "MetaData",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Table",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Text",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "UniqueViolationError",
+        "importPath": "asyncpg.exceptions",
+        "description": "asyncpg.exceptions",
+        "isExtraImport": true,
+        "detail": "asyncpg.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKeyViolationError",
+        "importPath": "asyncpg.exceptions",
+        "description": "asyncpg.exceptions",
+        "isExtraImport": true,
+        "detail": "asyncpg.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "UniqueViolationError",
+        "importPath": "asyncpg.exceptions",
+        "description": "asyncpg.exceptions",
+        "isExtraImport": true,
+        "detail": "asyncpg.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "UniqueViolationError",
+        "importPath": "asyncpg.exceptions",
+        "description": "asyncpg.exceptions",
+        "isExtraImport": true,
+        "detail": "asyncpg.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "UniqueViolationError",
+        "importPath": "asyncpg.exceptions",
+        "description": "asyncpg.exceptions",
+        "isExtraImport": true,
+        "detail": "asyncpg.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKeyViolationError",
+        "importPath": "asyncpg.exceptions",
+        "description": "asyncpg.exceptions",
+        "isExtraImport": true,
+        "detail": "asyncpg.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "UniqueViolationError",
+        "importPath": "asyncpg.exceptions",
+        "description": "asyncpg.exceptions",
+        "isExtraImport": true,
+        "detail": "asyncpg.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "metadata",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "companies",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "reviews",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "services",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "projects",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "users",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "companies",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "projects",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "companies",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "reviews",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "users",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "companies",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "services",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "users",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyCreate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyUpdate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyListModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyDetail",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectCreate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectUpdate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewCreate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewUpdate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceCreate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceUpdate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserPasswordUpdate",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "validate_phone_number",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "validate_email",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "validate_inn",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "validate_phone_number",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "validate_email",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "role_required",
+        "importPath": "decorators",
+        "description": "decorators",
+        "isExtraImport": true,
+        "detail": "decorators",
+        "documentation": {}
+    },
+    {
+        "label": "is_company_owner",
+        "importPath": "decorators",
+        "description": "decorators",
+        "isExtraImport": true,
+        "detail": "decorators",
+        "documentation": {}
+    },
+    {
+        "label": "is_company_owner",
+        "importPath": "decorators",
+        "description": "decorators",
+        "isExtraImport": true,
+        "detail": "decorators",
+        "documentation": {}
+    },
+    {
+        "label": "role_required",
+        "importPath": "decorators",
+        "description": "decorators",
+        "isExtraImport": true,
+        "detail": "decorators",
+        "documentation": {}
+    },
+    {
+        "label": "is_company_owner",
+        "importPath": "decorators",
+        "description": "decorators",
+        "isExtraImport": true,
+        "detail": "decorators",
+        "documentation": {}
+    },
+    {
+        "label": "role_required",
+        "importPath": "decorators",
+        "description": "decorators",
+        "isExtraImport": true,
+        "detail": "decorators",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "databases",
+        "description": "databases",
+        "isExtraImport": true,
+        "detail": "databases",
+        "documentation": {}
+    },
+    {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordRequestForm",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "company",
+        "importPath": "api",
+        "description": "api",
+        "isExtraImport": true,
+        "detail": "api",
+        "documentation": {}
+    },
+    {
+        "label": "project",
+        "importPath": "api",
+        "description": "api",
+        "isExtraImport": true,
+        "detail": "api",
+        "documentation": {}
+    },
+    {
+        "label": "review",
+        "importPath": "api",
+        "description": "api",
+        "isExtraImport": true,
+        "detail": "api",
+        "documentation": {}
+    },
+    {
+        "label": "service",
+        "importPath": "api",
+        "description": "api",
+        "isExtraImport": true,
+        "detail": "api",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "CryptContext",
+        "importPath": "passlib.context",
+        "description": "passlib.context",
+        "isExtraImport": true,
+        "detail": "passlib.context",
+        "documentation": {}
+    },
+    {
+        "label": "JWTError",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "validate_company_data",
+        "kind": 2,
+        "importPath": "back.api.company",
+        "description": "back.api.company",
+        "peekOfCode": "def validate_company_data(company_data):\n    if not validate_email(company_data.email):\n        raise HTTPException(status_code=400, detail=\"Невалидная почта\")\n    if not validate_phone_number(company_data.phone_number):\n        raise HTTPException(status_code=400, detail=\"Невалидный номер телефона\")\n    (is_valid_inn, error) = validate_inn(company_data.inn)\n    if not is_valid_inn:\n        raise HTTPException(status_code=400, detail=error)",
+        "detail": "back.api.company",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "back.api.company",
+        "description": "back.api.company",
+        "peekOfCode": "router = APIRouter()\n# Добавление компании (только для администраторов)\n@router.post(\"/\", response_model=dict)\n@role_required([\"admin\"])\nasync def create_company(company: CompanyCreate, current_user: dict = Depends(get_current_user)):\n    validate_company_data(company)\n    query = companies.insert().values(name=company.name, \n        rating=0, \n        description=company.description, \n        staff=company.staff, ",
+        "detail": "back.api.company",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "back.api.project",
+        "description": "back.api.project",
+        "peekOfCode": "router = APIRouter()\n# Добавление проекта компании\n@router.post(\"/\", response_model=dict)\n@is_company_owner()\nasync def create_project(company_id: int, project: ProjectCreate, current_user: dict = Depends(get_current_user)):\n    query = projects.insert().values(name=project.name, description=project.description, company_id=company_id)\n    try:\n        project_id = await database.execute(query)\n    except UniqueViolationError:\n        raise HTTPException(status_code=400, detail=\"У данной организации уже есть проект с таким наименованием\")",
+        "detail": "back.api.project",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "back.api.review",
+        "description": "back.api.review",
+        "peekOfCode": "router = APIRouter()\n# Добавление отзыва о компании\n@router.post(\"/\", response_model=dict)\n@role_required([\"user\", \"admin\"])\nasync def create_review(company_id: int, review: ReviewCreate, current_user: dict = Depends(get_current_user)):\n    if not 1 <= review.rating <= 5:\n        raise HTTPException(status_code=400, detail=\"Рейтинг может принимать значения от 1 до 5\")\n    query = reviews.insert().values(\n        content=review.content,\n        rating=review.rating,",
+        "detail": "back.api.review",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "back.api.service",
+        "description": "back.api.service",
+        "peekOfCode": "router = APIRouter()\n# Добавление услуги компании\n@router.post(\"/\", response_model=dict)\n@is_company_owner()\nasync def create_service(company_id: int, service: ServiceCreate, current_user: dict = Depends(get_current_user)):\n    query = services.insert().values(name=service.name, price=service.price, company_id=company_id)\n    try:\n        service_id = await database.execute(query)\n    except ForeignKeyViolationError:\n        raise HTTPException(status_code=404, detail=\"Компания не найдена\")",
+        "detail": "back.api.service",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_URL",
+        "kind": 5,
+        "importPath": "back.database",
+        "description": "back.database",
+        "peekOfCode": "DATABASE_URL = \"postgresql://postgres:123@localhost/IT\"\ndatabase = Database(DATABASE_URL)\nmetadata = MetaData()\nengine = create_engine(DATABASE_URL)\nmetadata.create_all(engine)",
+        "detail": "back.database",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "kind": 5,
+        "importPath": "back.database",
+        "description": "back.database",
+        "peekOfCode": "database = Database(DATABASE_URL)\nmetadata = MetaData()\nengine = create_engine(DATABASE_URL)\nmetadata.create_all(engine)",
+        "detail": "back.database",
+        "documentation": {}
+    },
+    {
+        "label": "metadata",
+        "kind": 5,
+        "importPath": "back.database",
+        "description": "back.database",
+        "peekOfCode": "metadata = MetaData()\nengine = create_engine(DATABASE_URL)\nmetadata.create_all(engine)",
+        "detail": "back.database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "back.database",
+        "description": "back.database",
+        "peekOfCode": "engine = create_engine(DATABASE_URL)\nmetadata.create_all(engine)",
+        "detail": "back.database",
+        "documentation": {}
+    },
+    {
+        "label": "role_required",
+        "kind": 2,
+        "importPath": "back.decorators",
+        "description": "back.decorators",
+        "peekOfCode": "def role_required(allowed_roles: list):\n    \"\"\"\n    Декоратор для проверки роли пользователя.\n    :param allowed_roles: список допустимых ролей, например [\"admin\", \"company\"]\n    \"\"\"\n    def decorator(func):\n        @wraps(func)\n        async def wrapper(*args, **kwargs):\n            current_user = kwargs.get(\"current_user\")\n            if not current_user or current_user.get(\"role\") not in allowed_roles:",
+        "detail": "back.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "is_company_owner",
+        "kind": 2,
+        "importPath": "back.decorators",
+        "description": "back.decorators",
+        "peekOfCode": "def is_company_owner():\n    \"\"\"\n    Декоратор для проверки, является ли текущий пользователь владельцем компании.\n    \"\"\"\n    def decorator(func):\n        @wraps(func)\n        async def wrapper(company_id: int, *args, **kwargs):\n            current_user = kwargs.get(\"current_user\")\n            if current_user[\"role\"] != \"admin\":\n                if current_user[\"role\"] == \"company\":",
+        "detail": "back.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "back.main",
+        "description": "back.main",
+        "peekOfCode": "app = FastAPI()\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\napp.include_router(company.router, prefix=\"/companies\", tags=[\"companies\"])\napp.include_router(project.router, prefix=\"/companies/{company_id}/projects\", tags=[\"projects\"])",
+        "detail": "back.main",
+        "documentation": {}
+    },
+    {
+        "label": "users",
+        "kind": 5,
+        "importPath": "back.models",
+        "description": "back.models",
+        "peekOfCode": "users = Table(\n    \"users\",\n    metadata,\n    Column(\"id\", Integer, primary_key=True),\n    Column(\"email\", String(255), unique=True, nullable=False),\n    Column(\"phone_number\", String(15), nullable=False),\n    Column(\"hashed_password\", String(255), nullable=False),\n    Column(\"role\", String(20), nullable=False),  # \"user\", \"company\", \"admin\"\n    Column(\"name\", String(50)),\n)",
+        "detail": "back.models",
+        "documentation": {}
+    },
+    {
+        "label": "companies",
+        "kind": 5,
+        "importPath": "back.models",
+        "description": "back.models",
+        "peekOfCode": "companies = Table(\n    \"companies\",\n    metadata,\n    Column(\"id\", Integer, primary_key=True),\n    Column(\"name\", String(255), nullable=False),\n    Column(\"rating\", Float, default=0),\n    Column(\"description\", Text),\n    Column(\"staff\", Integer, nullable=False),\n    Column(\"email\", String(255), nullable=False),\n    Column(\"inn\", String(12), nullable=False),",
+        "detail": "back.models",
+        "documentation": {}
+    },
+    {
+        "label": "services",
+        "kind": 5,
+        "importPath": "back.models",
+        "description": "back.models",
+        "peekOfCode": "services = Table(\n    \"services\",\n    metadata,\n    Column(\"id\", Integer, primary_key=True),\n    Column(\"name\", String(255), nullable=False),\n    Column(\"price\", Float, nullable=False),\n    Column(\"company_id\", Integer, ForeignKey(\"companies.id\")),\n)\nprojects = Table(\n    \"projects\",",
+        "detail": "back.models",
+        "documentation": {}
+    },
+    {
+        "label": "projects",
+        "kind": 5,
+        "importPath": "back.models",
+        "description": "back.models",
+        "peekOfCode": "projects = Table(\n    \"projects\",\n    metadata,\n    Column(\"id\", Integer, primary_key=True),\n    Column(\"name\", String(255), nullable=False),\n    Column(\"description\", Text),\n    Column(\"company_id\", Integer, ForeignKey(\"companies.id\")),\n)\nreviews = Table(\n    \"reviews\",",
+        "detail": "back.models",
+        "documentation": {}
+    },
+    {
+        "label": "reviews",
+        "kind": 5,
+        "importPath": "back.models",
+        "description": "back.models",
+        "peekOfCode": "reviews = Table(\n    \"reviews\",\n    metadata,\n    Column(\"id\", Integer, primary_key=True),\n    Column(\"content\", Text, nullable=False),\n    Column(\"rating\", Integer, nullable=False),\n    Column(\"company_id\", Integer, ForeignKey(\"companies.id\")),\n    Column(\"user_id\", Integer, ForeignKey(\"users.id\")),\n)",
+        "detail": "back.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class UserCreate(BaseModel):\n    email: str\n    phone_number: str\n    password: str\n    name: str\n    is_company: bool\nclass TokenModel(BaseModel):\n    access_token: str\n    token_type: str\nclass UserModel(BaseModel):",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenModel",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class TokenModel(BaseModel):\n    access_token: str\n    token_type: str\nclass UserModel(BaseModel):\n    id: int\n    email: str\n    phone_number: str\n    name: str\n    role: str\nclass UserPasswordUpdate(BaseModel):",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserModel",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class UserModel(BaseModel):\n    id: int\n    email: str\n    phone_number: str\n    name: str\n    role: str\nclass UserPasswordUpdate(BaseModel):\n    password: str\nclass ServiceCreate(BaseModel):\n    name: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserPasswordUpdate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class UserPasswordUpdate(BaseModel):\n    password: str\nclass ServiceCreate(BaseModel):\n    name: str\n    price: float\nclass ServiceUpdate(BaseModel):\n    name: str\n    price: float\nclass ServiceModel(BaseModel):\n    id: int",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceCreate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ServiceCreate(BaseModel):\n    name: str\n    price: float\nclass ServiceUpdate(BaseModel):\n    name: str\n    price: float\nclass ServiceModel(BaseModel):\n    id: int\n    name: str\n    price: float",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceUpdate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ServiceUpdate(BaseModel):\n    name: str\n    price: float\nclass ServiceModel(BaseModel):\n    id: int\n    name: str\n    price: float\nclass ProjectCreate(BaseModel):\n    name: str\n    description: Optional[str]",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceModel",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ServiceModel(BaseModel):\n    id: int\n    name: str\n    price: float\nclass ProjectCreate(BaseModel):\n    name: str\n    description: Optional[str]\nclass ProjectUpdate(BaseModel):\n    name: str\n    description: Optional[str]",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectCreate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ProjectCreate(BaseModel):\n    name: str\n    description: Optional[str]\nclass ProjectUpdate(BaseModel):\n    name: str\n    description: Optional[str]\nclass ProjectModel(BaseModel):\n    id: int\n    name: str\n    description: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectUpdate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ProjectUpdate(BaseModel):\n    name: str\n    description: Optional[str]\nclass ProjectModel(BaseModel):\n    id: int\n    name: str\n    description: str\nclass CompanyCreate(BaseModel):\n    name: str\n    description: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectModel",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ProjectModel(BaseModel):\n    id: int\n    name: str\n    description: str\nclass CompanyCreate(BaseModel):\n    name: str\n    description: str\n    staff: int\n    email: str\n    inn: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyCreate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class CompanyCreate(BaseModel):\n    name: str\n    description: str\n    staff: int\n    email: str\n    inn: str\n    phone_number: str\n    user_id: int\nclass CompanyUpdate(BaseModel):\n    name: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyUpdate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class CompanyUpdate(BaseModel):\n    name: str\n    staff: int\n    description: str\n    email: str\n    inn: str\n    phone_number: str\nclass CompanyModel(BaseModel):\n    id: int\n    name: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyModel",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class CompanyModel(BaseModel):\n    id: int\n    name: str\n    rating: float\n    description: str\n    staff: int\n    email: str\n    inn: str\n    phone_number: str\n    user_id: int",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyDetail",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class CompanyDetail(BaseModel):\n    id: int\n    name: str\n    rating: float\n    description: str\n    staff: int\n    email: str\n    inn: str\n    phone_number: str\n    user_id: int",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CompanyListModel",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class CompanyListModel(BaseModel):\n    id: int\n    name: str\n    rating: float\n    min_price: Optional[float]\n    max_price: Optional[float]\n    project_count: int\n    user_name: str\nclass ReviewCreate(BaseModel):\n    content: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewCreate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ReviewCreate(BaseModel):\n    content: str\n    rating: int\nclass ReviewUpdate(BaseModel):\n    content: str\n    rating: float\nclass ReviewModel(BaseModel):\n    id: int\n    content: str\n    rating: int",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewUpdate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ReviewUpdate(BaseModel):\n    content: str\n    rating: float\nclass ReviewModel(BaseModel):\n    id: int\n    content: str\n    rating: int\n    company_id: int\n    user_id: int\n    user_name: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewModel",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ReviewModel(BaseModel):\n    id: int\n    content: str\n    rating: int\n    company_id: int\n    user_id: int\n    user_name: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "kind": 2,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "def verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.utcnow() + timedelta(minutes=15)",
+        "detail": "back.utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "kind": 2,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "def get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.utcnow() + timedelta(minutes=15)\n    to_encode.update({\"exp\": expire})\n    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)",
+        "detail": "back.utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "kind": 2,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "def create_access_token(data: dict, expires_delta: timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.utcnow() + timedelta(minutes=15)\n    to_encode.update({\"exp\": expire})\n    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)\n    return encoded_jwt\nasync def get_current_user(token: str = Depends(oauth2_scheme)):",
+        "detail": "back.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validate_phone_number",
+        "kind": 2,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "def validate_phone_number(phone):\n    \"\"\"Проверяет номер телефона на соответствие международному формату\"\"\"\n    pattern = r'^\\+?\\d{10,15}$'  # Разрешает + в начале и 10-15 цифр\n    return re.match(pattern, phone) is not None\ndef validate_email(email):\n    \"\"\"Проверяет, является ли email корректным\"\"\"\n    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$'\n    return re.match(pattern, email) is not None\ndef validate_inn(inn):\n    \"\"\"Валидация ИНН (идентификационного номера налогоплательщика)\"\"\"",
+        "detail": "back.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validate_email",
+        "kind": 2,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "def validate_email(email):\n    \"\"\"Проверяет, является ли email корректным\"\"\"\n    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$'\n    return re.match(pattern, email) is not None\ndef validate_inn(inn):\n    \"\"\"Валидация ИНН (идентификационного номера налогоплательщика)\"\"\"\n    if not inn.isdigit():\n        return False, \"ИНН должен состоять только из цифр\"\n    if len(inn) not in (10, 12):\n        return False, \"ИНН должен быть длиной 10 или 12 символов\"",
+        "detail": "back.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validate_inn",
+        "kind": 2,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "def validate_inn(inn):\n    \"\"\"Валидация ИНН (идентификационного номера налогоплательщика)\"\"\"\n    if not inn.isdigit():\n        return False, \"ИНН должен состоять только из цифр\"\n    if len(inn) not in (10, 12):\n        return False, \"ИНН должен быть длиной 10 или 12 символов\"\n    # Проверка контрольной суммы для 10-значного ИНН\n    if len(inn) == 10:\n        factors = [2, 4, 10, 3, 5, 9, 4, 6, 8]\n        checksum = sum(int(inn[i]) * factors[i] for i in range(9)) % 11 % 10",
+        "detail": "back.utils",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "SECRET_KEY = \"secret_key\"\nALGORITHM = \"HS256\"\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: timedelta = None):\n    to_encode = data.copy()",
+        "detail": "back.utils",
+        "documentation": {}
+    },
+    {
+        "label": "ALGORITHM",
+        "kind": 5,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "ALGORITHM = \"HS256\"\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:",
+        "detail": "back.utils",
+        "documentation": {}
+    },
+    {
+        "label": "pwd_context",
+        "kind": 5,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta",
+        "detail": "back.utils",
+        "documentation": {}
+    },
+    {
+        "label": "oauth2_scheme",
+        "kind": 5,
+        "importPath": "back.utils",
+        "description": "back.utils",
+        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:",
+        "detail": "back.utils",
+        "documentation": {}
+    }
+]
