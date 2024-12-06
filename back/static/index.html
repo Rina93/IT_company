@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение стилей CSS, BCSS, B-icons -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Главная - IT Услуги Самары</title>
+</head>
+
+<body>
+<header class="bg-dark py-3"> <!-- Шапка сайта -->
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="header-nav">
+            <a href="index.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-house-fill"></i> Главная
+            </a>
+            <a id="catalogButton" href="catalog.html" class="me-4 text-white text-decoration-none"  hidden>
+                <i class="bi bi-list-ul"></i> Каталог
+            </a>
+            <a href="about.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-info-circle"></i> О нас
+            </a>
+        </div>
+        <div class="header-actions"> <!-- Добавить d-none в класс перед "Личный кабинет" -->
+            <button id="loginButton" type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+            <button id="registerButton" type="button" class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+            <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary" hidden>Личный кабинет</a>
+        </div>
+    </div>
+</header>
+<div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1055;">
+    <div id="toastTemplate" class="toast border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
+        <div class="toast-header border-0">
+            <span id="toastIcon" class="rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 30px; height: 30px;"></span>
+            <strong id="toastTitle" class="me-auto text-dark"></strong>
+        </div>
+        <div id="toastBody" class="toast-body text-white rounded-bottom"></div>
+    </div>
+</div>
+<SignInUp> <!-- Модальные окна входа и регистрации -->
+    <!-- Модальное окно для Входа -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Вход в аккаунт</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите ваш Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите ваш пароль">
+                        </div>
+                        <button class="btn btn-primary w-100">Войти</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="text-center w-100">Нет аккаунта? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Зарегистрироваться</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для Регистрации -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="registerName" placeholder="Введите ваше имя">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите ваш Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите ваш пароль">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Подтвердите пароль</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Подтвердите пароль">
+                        </div>
+                        <button class="btn btn-success w-100">Зарегистрироваться</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="text-center w-100">Уже есть аккаунт? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Войти</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</SignInUp>
+<script src="js/main.js"></script>
+
+<main>
+    <section class="hero bg-primary text-white text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Найдите IT-компанию Самары для вашего проекта</h1>
+            <p class="lead">Лучшие профессионалы в одном месте. Быстро, удобно, надёжно.</p>
+            <a href="#services" class="btn btn-light btn-lg">Посмотреть услуги</a>
+        </div>
+    </section>
+
+
+<!-- Модуль 1 -->
+<div class="container px-4 py-5" id="hanging-icons">
+    <h2 class="pb-2 border-bottom">Мы упрощаем каждый этап вашего исследовательского процесса</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
+        <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+            <i class="bi bi-card-checklist fs-2"></i>
+        </div>
+        <div>
+            <h3 class="fs-2 text-body-emphasis">Выберите категорию</h3>
+            <p>Выберите тип компании, которую вы ищете</p>
+        </div>
+        </div>
+        <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+            <i class="bi bi-chat-right-text fs-2"></i>
+        </div>
+        <div>
+            <h3 class="fs-2 text-body-emphasis">Читайте отзывы и рейтинги</h3>
+            <p>Ознакомьтесь с проверенными отзывами и рейтингами компаний</p>
+        </div>
+        </div>
+        <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+            <i class="bi bi-award fs-2"></i>
+        </div>
+        <div>
+            <h3 class="fs-2 text-body-emphasis">Список лучших</h3>
+            <p>Выберите компанию, которая лучше всего соответствует вашим требованиям</p>
+        </div>
+        </div>
+        <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+            <i class="bi bi-star-fill fs-2"></i>
+        </div>
+        <div>
+            <h3 class="fs-2 text-body-emphasis">Оставить отзыв</h3>
+            <p>Оставляйте отзывы о компаниях, чтобы помочь другим принять правильные решения</p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+<!-- Блок услуг -->
+<section id="services" class="pd-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Услуги партнёров</h2>
+        <div class="row">
+            <!-- Разработка -->
+            <div class="col-md-3 mb-4">
+                <i class="bi bi-code-slash fs-1 text-primary"></i>
+                <h4 class="mt-3">Разработка</h4>
+                <p>Создание сайтов, мобильных приложений и программного обеспечения любой сложности.</p>
+            </div>
+            <!-- Дизайн -->
+            <div class="col-md-3 mb-4">
+                <i class="bi bi-palette fs-1 text-success"></i>
+                <h4 class="mt-3">Дизайн</h4>
+                <p>Проектирование удобных интерфейсов и создание стильных графических решений для ваших продуктов.</p>
+            </div>
+            <!-- Тестирование -->
+            <div class="col-md-3 mb-4">
+                <i class="bi bi-bug fs-1 text-danger"></i>
+                <h4 class="mt-3">Тестирование</h4>
+                <p>Обеспечение качества вашего продукта с помощью функционального, нагрузочного и UX-тестирования.</p>
+            </div>
+            <!-- DevOps -->
+            <div class="col-md-3 mb-4">
+                <i class="bi bi-gear-wide-connected fs-1 text-warning"></i>
+                <h4 class="mt-3">DevOps</h4>
+                <p>Настройка CI/CD процессов, автоматизация и управление инфраструктурой.</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Дата инженерия -->
+            <div class="col-md-3 mb-4">
+                <i class="bi bi-database fs-1 text-info"></i>
+                <h4 class="mt-3">Дата инженерия</h4>
+                <p>Работа с большими данными, настройка потоков данных и создание хранилищ.</p>
+            </div>
+            <!-- Маркетинг -->
+            <div class="col-md-3 mb-4">
+                <i class="bi bi-megaphone fs-1 text-purple"></i>
+                <h4 class="mt-3">Маркетинг</h4>
+                <p>Продвижение ваших продуктов через контент, SMM, SEO и рекламные кампании.</p>
+            </div>
+            <!-- Менеджмент -->
+            <div class="col-md-3 mb-4">
+                <i class="bi bi-briefcase fs-1 text-brown"></i>
+                <h4 class="mt-3">Менеджмент</h4>
+                <p>Планирование, управление проектами и контроль за их выполнением.</p>
+            </div>
+            <!-- Кибербезопасность -->
+            <div class="col-md-3 mb-4">
+                <i class="bi bi-shield-lock fs-1 text-primary"></i>
+                <h4 class="mt-3">Кибербезопасность</h4>
+                <p>Защита данных и инфраструктуры от угроз.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Блок партнёров -->
+<section id="partners" class="py-5">
+    <div class="container text-center">
+        <h2>Наши партнёры</h2>
+        <div class="row mt-4">
+            <!-- Первый столбец -->
+            <div class="col-6 col-md-3 partner-column">
+                <img src="images/logo-1.png" 
+                    alt="Партнёр 1" 
+                    class="img-fluid img-logo-3-company">
+            </div>
+            <!-- Второй столбец -->
+            <div class="col-6 col-md-3 partner-column">
+                <img src="images/logo-3.png" 
+                    alt="Партнёр 2" 
+                    class="img-fluid img-logo-3-company">
+            </div>
+            <!-- Третий столбец -->
+            <div class="col-6 col-md-3 partner-column">
+                <img src="images/logo-2.png" 
+                    alt="Партнёр 3" 
+                    class="img-fluid img-logo-2-company">
+            </div>
+            <!-- Четвёртый столбец -->
+            <div class="col-6 col-md-3 partner-column">
+                <img src="images/logo-4.jpg" 
+                    alt="Партнёр 4" 
+                    class="img-fluid img-logo-2-company">
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+
+<div class="container-fluid bg-dark text-white mt-auto"> <!-- Футер -->
+    <footer class="bg-dark py-2">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link px-2 text-white">Вернуться на главную</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link px-2 text-white">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-white">FAQs</a>
+            </li>
+        </ul>
+        <p class="text-center">© 2024 IT услуги Самары.</p>
+    </footer>
+</div>
+</body>
+</html>

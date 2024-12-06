@@ -1,0 +1,139 @@
+
+/* Основной стиль для иконок */
+.toast-header #toastIcon {
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Разные цвета для типов уведомлений */
+.toast.bg-success .toast-body {
+    background-color: #198754; /* Зеленый */
+}
+
+.toast.bg-danger .toast-body {
+    background-color: #dc3545; /* Красный */
+}
+
+.toast.bg-warning .toast-body {
+    background-color: #ffc107; /* Желтый */
+    color: #212529; /* Темный текст */
+}
+
+.toast.bg-primary .toast-body {
+    background-color: #0d6efd; /* Синий */
+}
+
+/* Тени и закругления */
+.toast {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.toast-body {
+    padding: 1rem;
+}
+
+.toast-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* <link rel="stylesheet" href="C:\Projects\Hackaton\IT_company\Front\static\css\main.css"> */
+
+
+
+/* about.html*/
+/*Скругление картинки */
+.imgAboutUs {
+    border-radius: 20px; /* Скругление углов на 20 пикселей */
+}
+
+
+
+/* index.html*/
+/* Стиль для героя */
+.hero {
+    padding-top: 120px; /* Отступ сверху */
+    padding-bottom: 80px; /* Отступ снизу */
+    min-height: 600px; /* Минимальная высота блока */
+}
+
+
+
+/* Стиль для портфеля в категории услуг*/
+.text-brown {
+    color: #8B4513; /* Коричневый цвет */
+}
+
+
+
+/*Логотипы компаний-партнёров*/
+.img-logo-2-company {
+    width: 100px; /* Ширина логотипа */
+    height: 100px; /* Высота логотипа */
+    margin-right: 10px; /* Отступ справа */
+    margin-bottom: 10px; /* Отступ снизу */
+    
+}
+.img-logo-3-company {
+    width: 160px; /* Ширина логотипа */
+    height: 100px; /* Высота логотипа */
+    margin-right: 10px; /* Отступ справа */
+    margin-bottom: 10px; /* Отступ снизу */
+    
+}
+
+
+/* Стиль для карточек в категории услуг*/
+.category-card h5 {
+    font-size: 1.25rem; /* Размер заголовков карточек */
+    font-weight: bold;
+}
+.category-card p {
+    font-size: 1rem; /* Размер текста карточек */
+}
+.category-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+
+
+/* company.html */
+/* Стили для карточек комментариев */
+.card.comment {
+    width: 18%; /* Занимает 1/5 ширины контейнера */
+    min-width: 200px; /* Минимальная ширина для адаптивности */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение контента */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Чтобы карточка занимала всю высоту */
+}
+
+.card-text {
+    flex-grow: 1; /* Чтобы текст занимал оставшееся пространство */
+}
+
+.d-flex {
+    display: flex;
+}
+
+.gap-3 {
+    gap: 1rem; /* Добавляем отступы между карточками */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .card.comment {
+        width: 100%; /* На маленьких экранах карточки занимают всю ширину */
+    }
+}

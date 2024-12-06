@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Подключение Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Компании</title>
+</head>
+<body>
+<!-- Шапка сайта -->
+<header class="bg-dark py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="header-nav">
+            <a href="index.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-house-fill"></i> Главная
+            </a>
+            <a id="catalogButton" href="catalog.html" class="me-4 text-white text-decoration-none"  hidden>
+                <i class="bi bi-list-ul"></i> Каталог
+            </a>
+            <a href="about.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-info-circle"></i> О нас
+            </a>
+        </div>
+        <div class="header-actions">
+            <button id="loginButton" type="button" class="btn btn-outline-light me-2 d-none" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+            <button id="registerButton" type="button" class="btn btn-warning me-2 d-none" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+            <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary" hidden>Личный кабинет</a>
+        </div>
+    </div>
+</header>
+<div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1055;">
+    <div id="toastTemplate" class="toast border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
+        <div class="toast-header border-0">
+            <span id="toastIcon" class="rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 30px; height: 30px;"></span>
+            <strong id="toastTitle" class="me-auto text-dark"></strong>
+        </div>
+        <div id="toastBody" class="toast-body text-white rounded-bottom"></div>
+    </div>
+</div>
+<script src="js/main.js"></script>
+
+<main class="container py-5">
+    <!-- Название компании -->
+    <section class="mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 id="companyName"></h1>
+        </div>
+    </section>
+
+    <!-- Основная информация -->
+    <section class="mb-5">
+        <div class="row g-4">
+            <!-- Левая колонка -->
+            <div class="col-12 col-md-6">
+                <h3>Описание</h3>
+                <p id="companyDescription">
+                    
+                </p>
+            </div>
+            <!-- Правая колонка -->
+            <div class="col-12 col-md-6">
+                <h3>Контактная информация</h3>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-telephone"></i> Телефон: <span id="companyPhone"> </span></li>
+                    <li><i class="bi bi-envelope"></i> Email: <span id="companyEmail"> </span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="mb-5">
+        <h3>Услуги</h3>
+        <ul id="companyServices">
+            
+        </ul>
+    </section>
+
+    <!-- Портфолио -->
+    <section class="mb-5">
+        <h3>Портфолио</h3>
+        <div id="companyProjects" class="row g-4">
+            
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="mb-5">
+        <h3>Отзывы</h3>
+        <div id="companyReviews" class="row g-4">
+            
+        </div>
+    </section>
+
+    <section id="reviewSection" hidden>
+        <div class="card h-100 shadow-sm" >
+            <div class="card-body">
+                <h5 class="card-title">Добавить отзыв</h5>
+                <div id="reviewForm">
+                    <div class="mb-3">
+                        <label for="reviewText" class="form-label">Ваш отзыв</label>
+                        <textarea class="form-control" id="reviewText" rows="3" placeholder="Напишите ваш отзыв" required></textarea>
+                    </div>
+        
+                    <!-- Поле для рейтинга -->
+                    <div class="mb-3">
+                        <label for="rating" class="form-label">Рейтинг</label>
+                        <select class="form-select" id="rating" required>
+                            <option value="" disabled selected>Выберите рейтинг</option>
+                            <option value="1">1 звезда</option>
+                            <option value="2">2 звезды</option>
+                            <option value="3">3 звезды</option>
+                            <option value="4">4 звезды</option>
+                            <option value="5">5 звезд</option>
+                        </select>
+                    </div>
+        
+                    <!-- Кнопка отправки -->
+                    <button id="sendReview" class="btn btn-primary w-100">Добавить отзыв</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Футер -->
+<div class="container-fluid bg-dark text-white mt-auto">
+    <footer class="bg-dark py-3">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link px-2 text-white">Вернуться на главную</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link px-2 text-white">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-white">FAQs</a>
+            </li>
+        </ul>
+        <p class="text-center">© 2024 IT услуги Самары.</p>
+    </footer>
+</div>
+<script src="js/company.js"></script>
+</body>
+</html>

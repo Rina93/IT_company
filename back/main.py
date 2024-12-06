@@ -2,7 +2,7 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from sqlalchemy import select
 from asyncpg.exceptions import UniqueViolationError
 from database import database
-from models import users
+from models import users, services
 from schemas import UserCreate, TokenModel, UserModel, UserPasswordUpdate
 from utils import get_password_hash, verify_password, create_access_token
 from datetime import timedelta
@@ -12,12 +12,13 @@ from decorators import role_required
 from utils import get_current_user, validate_phone_number, validate_email
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from typing import List
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -27,6 +28,8 @@ app.include_router(company.router, prefix="/companies", tags=["companies"])
 app.include_router(project.router, prefix="/companies/{company_id}/projects", tags=["projects"])
 app.include_router(review.router, prefix="/companies/{company_id}/reviews", tags=["reviews"])
 app.include_router(service.router, prefix="/companies/{company_id}/services", tags=["services"])
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.on_event("startup")
 async def startup():
@@ -44,7 +47,7 @@ async def register(user: UserCreate):
         raise HTTPException(status_code=400, detail="Невалидный номер телефона")
 
     hashed_password = get_password_hash(user.password)
-    query = users.insert().values(email=user.email, hashed_password=hashed_password, role=( 'company' if user.is_company else 'user'), phone_number=user.phone_number)
+    query = users.insert().values(email=user.email, hashed_password=hashed_password, name=user.name, role=('company' if user.is_company else 'user'), phone_number=user.phone_number)
 
     try:
         await database.execute(query)
@@ -82,10 +85,20 @@ async def change_password(data: UserPasswordUpdate, current_user: dict = Depends
 
 @app.get("/me", response_model=UserModel)
 async def get_me(current_user: dict = Depends(get_current_user)):
-    return {
-        "id": current_user["user_id"],
-        "email": current_user["sub"],
-        "phone_number": current_user["phone_number"],
-        "name": current_user["name"],
-        "role": current_user["role"]
-    }
+    query = users.select().where(users.c.id == current_user['user_id'])
+    return await database.fetch_one(query)
+
+@app.put("/me", response_model=dict)
+async def change_user(data: dict, current_user: dict = Depends(get_current_user)):
+    query = users.update().where(users.c.id == current_user["user_id"]).values(email=data['email'],
+        name = data['name'],
+        phone_number = data['phone_number'])
+
+    await database.execute(query)
+    
+    return {"message": "Данные пользователя успешно обновлены"}
+
+@app.get("/services", response_model=List[dict])
+async def all_unique_services(current_user: dict = Depends(get_current_user)):
+    query = select(services.c.name).distinct()
+    return await database.fetch_all(query) 

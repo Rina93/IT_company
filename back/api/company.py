@@ -3,7 +3,7 @@ from sqlalchemy import select, func
 from asyncpg.exceptions import UniqueViolationError, ForeignKeyViolationError
 from database import database
 from models import companies, reviews, services, projects, users
-from schemas import  CompanyCreate, CompanyUpdate, CompanyModel, CompanyListModel, CompanyDetail
+from schemas import  CompanyCreate, CompanyUpdate, CompanyModel, CompanyListModel, CompanyDetail, ServiceModel, ReviewModel, ProjectModel
 from utils import get_current_user, validate_phone_number, validate_email, validate_inn
 from typing import List
 from decorators import role_required, is_company_owner
@@ -62,9 +62,11 @@ async def update_company(
 @router.get("/", response_model=list[CompanyListModel])
 async def get_companies(current_user: dict = Depends(get_current_user),
     service_name: List[str] = Query(None),  # Фильтр по названию услуги
+    company_name: str = None,  # Фильтр по названию компании
     min_price: float = None,  # Минимальная стоимость услуги
     max_price: float = None,  # Максимальная стоимость услуги
     min_projects: int = None, # Минимальное количество проектов
+    min_rating: int = None, # Минимальное количество проектов
     limit: int = 10,          # Количество компаний на странице (пагинация)
     offset: int = 0,          # Смещение для пагинации
 ):
@@ -72,7 +74,7 @@ async def get_companies(current_user: dict = Depends(get_current_user),
     service_filter = select(services.c.company_id).distinct()
     if service_name:
         service_filter = service_filter.where(
-            services.c.name.in_([name.lower() for name in service_name])
+            services.c.name.in_([name for name in service_name])
         )
     if min_price is not None:
         service_filter = service_filter.where(services.c.price >= min_price)
@@ -85,20 +87,28 @@ async def get_companies(current_user: dict = Depends(get_current_user),
             companies.c.id,
             companies.c.name,
             companies.c.rating,
+            companies.c.description,
             func.min(services.c.price).label("min_price"),
             func.max(services.c.price).label("max_price"),
-            func.count(projects.c.id).label("project_count"),
+            func.count(reviews.c.id.distinct()).label("review_count"),
+            func.count(projects.c.id.distinct()).label("project_count"),
             users.c.name.label('user_name')
         )
         .join(services, services.c.company_id == companies.c.id, isouter=True)
         .join(projects, projects.c.company_id == companies.c.id, isouter=True)
+        .join(reviews, reviews.c.company_id == companies.c.id, isouter=True)
         .join(users, users.c.id == companies.c.user_id)
         .group_by(companies.c.id, users.c.name)
+        .order_by(companies.c.rating.desc())
     )
 
     # Применение фильтров
     if service_name or min_price is not None or max_price is not None:
         query = query.where(companies.c.id.in_(service_filter))
+    if company_name:
+        query = query.where(companies.c.name.ilike(f"%{company_name}%"))
+    if min_rating:
+        query = query.where(companies.c.rating >= min_rating)
     if min_projects is not None:
         query = query.having(func.count(projects.c.id) >= min_projects)
 
@@ -111,8 +121,8 @@ async def get_companies(current_user: dict = Depends(get_current_user),
     # Формирование ответа
     return result
 
-@router.get("/{company_id}", response_model=dict)
-async def get_company(company_id: int):
+@router.get("/{company_id}", response_model=CompanyDetail)
+async def get_company(company_id: int, current_user: dict = Depends(get_current_user)):
     query = (
         companies
             .join(users, users.c.id == companies.c.user_id)
@@ -146,8 +156,14 @@ async def get_company(company_id: int):
         user_name = result.user_name,
         min_price = result.min_price,
         max_price = result.max_price,
-        services = await database.fetch_all(services.select().where(services.c.company_id == company_id)),
-        projects = await database.fetch_all(projects.select().where(projects.c.company_id == company_id))
+        current_user_id = current_user['user_id'],
+        is_admin = current_user['role'] == 'admin',
+        services = list(map(lambda x: ServiceModel(**x), await database.fetch_all(services.select().where(services.c.company_id == company_id)))),
+        projects = list(map(lambda x: ProjectModel(**x), await database.fetch_all(projects.select().where(projects.c.company_id == company_id)))),
+        reviews = list(map(lambda x: ReviewModel(**x), await database.fetch_all(reviews.join(users, reviews.c.user_id == users.c.id)
+            .select()
+            .where(reviews.c.company_id == company_id)
+            .with_only_columns(reviews, users.c.name.label("user_name")))))
     )
 
 @router.delete("/{company_id}")

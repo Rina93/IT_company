@@ -52,6 +52,23 @@ class ProjectModel(BaseModel):
     description: str
 
 
+class ReviewCreate(BaseModel):
+    content: str
+    rating: int
+
+class ReviewUpdate(BaseModel):
+    content: str
+    rating: float
+
+class ReviewModel(BaseModel):
+    id: int
+    content: str
+    rating: int
+    company_id: int
+    user_id: int
+    user_name: str
+
+
 class CompanyCreate(BaseModel):
     name: str
     description: str
@@ -91,10 +108,13 @@ class CompanyDetail(BaseModel):
     phone_number: str
     user_id: int
     user_name: str
+    current_user_id: int
+    is_admin: bool
     min_price: Optional[float]
     max_price: Optional[float]
     services: List[ServiceModel]
     projects: List[ProjectModel]
+    reviews: List[ReviewModel]
 
 class CompanyListModel(BaseModel):
     id: int
@@ -103,21 +123,6 @@ class CompanyListModel(BaseModel):
     min_price: Optional[float]
     max_price: Optional[float]
     project_count: int
-    user_name: str
-
-
-class ReviewCreate(BaseModel):
-    content: str
-    rating: int
-
-class ReviewUpdate(BaseModel):
-    content: str
-    rating: float
-
-class ReviewModel(BaseModel):
-    id: int
-    content: str
-    rating: int
-    company_id: int
-    user_id: int
+    review_count: int
+    description: str
     user_name: str

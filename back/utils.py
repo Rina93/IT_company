@@ -1,5 +1,6 @@
 from passlib.context import CryptContext
 from jose import JWTError, jwt
+from jose.exceptions import JWTError
 from datetime import datetime, timedelta
 from fastapi import Depends
 from fastapi.security import OAuth2PasswordBearer
@@ -29,8 +30,6 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
 
 async def get_current_user(token: str = Depends(oauth2_scheme)):
     try:
-        from jose import jwt
-        from jose.exceptions import JWTError
         SECRET_KEY = "secret_key"
         ALGORITHM = "HS256"
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
@@ -43,6 +42,8 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
 
 def validate_phone_number(phone):
     """Проверяет номер телефона на соответствие международному формату"""
+    if (phone == ''):
+        return True
     pattern = r'^\+?\d{10,15}$'  # Разрешает + в начале и 10-15 цифр
     return re.match(pattern, phone) is not None
 
