@@ -552,6 +552,14 @@
         "documentation": {}
     },
     {
+        "label": "services",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
         "label": "CompanyCreate",
         "importPath": "schemas",
         "description": "schemas",
@@ -585,6 +593,30 @@
     },
     {
         "label": "CompanyDetail",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ServiceModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectModel",
         "importPath": "schemas",
         "description": "schemas",
         "isExtraImport": true,
@@ -848,6 +880,14 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -1016,6 +1056,14 @@
         "documentation": {}
     },
     {
+        "label": "StaticFiles",
+        "importPath": "fastapi.staticfiles",
+        "description": "fastapi.staticfiles",
+        "isExtraImport": true,
+        "detail": "fastapi.staticfiles",
+        "documentation": {}
+    },
+    {
         "label": "relationship",
         "importPath": "sqlalchemy.orm",
         "description": "sqlalchemy.orm",
@@ -1045,6 +1093,14 @@
         "description": "jose",
         "isExtraImport": true,
         "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "JWTError",
+        "importPath": "jose.exceptions",
+        "description": "jose.exceptions",
+        "isExtraImport": true,
+        "detail": "jose.exceptions",
         "documentation": {}
     },
     {
@@ -1160,7 +1216,7 @@
         "kind": 5,
         "importPath": "back.main",
         "description": "back.main",
-        "peekOfCode": "app = FastAPI()\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\napp.include_router(company.router, prefix=\"/companies\", tags=[\"companies\"])\napp.include_router(project.router, prefix=\"/companies/{company_id}/projects\", tags=[\"projects\"])",
+        "peekOfCode": "app = FastAPI()\napp.add_middleware(\n    CORSMiddleware,\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\napp.include_router(company.router, prefix=\"/companies\", tags=[\"companies\"])\napp.include_router(project.router, prefix=\"/companies/{company_id}/projects\", tags=[\"projects\"])\napp.include_router(review.router, prefix=\"/companies/{company_id}/reviews\", tags=[\"reviews\"])",
         "detail": "back.main",
         "documentation": {}
     },
@@ -1286,7 +1342,7 @@
         "kind": 6,
         "importPath": "back.schemas",
         "description": "back.schemas",
-        "peekOfCode": "class ProjectUpdate(BaseModel):\n    name: str\n    description: Optional[str]\nclass ProjectModel(BaseModel):\n    id: int\n    name: str\n    description: str\nclass CompanyCreate(BaseModel):\n    name: str\n    description: str",
+        "peekOfCode": "class ProjectUpdate(BaseModel):\n    name: str\n    description: Optional[str]\nclass ProjectModel(BaseModel):\n    id: int\n    name: str\n    description: str\nclass ReviewCreate(BaseModel):\n    content: str\n    rating: int",
         "detail": "back.schemas",
         "documentation": {}
     },
@@ -1295,7 +1351,34 @@
         "kind": 6,
         "importPath": "back.schemas",
         "description": "back.schemas",
-        "peekOfCode": "class ProjectModel(BaseModel):\n    id: int\n    name: str\n    description: str\nclass CompanyCreate(BaseModel):\n    name: str\n    description: str\n    staff: int\n    email: str\n    inn: str",
+        "peekOfCode": "class ProjectModel(BaseModel):\n    id: int\n    name: str\n    description: str\nclass ReviewCreate(BaseModel):\n    content: str\n    rating: int\nclass ReviewUpdate(BaseModel):\n    content: str\n    rating: float",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewCreate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ReviewCreate(BaseModel):\n    content: str\n    rating: int\nclass ReviewUpdate(BaseModel):\n    content: str\n    rating: float\nclass ReviewModel(BaseModel):\n    id: int\n    content: str\n    rating: int",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewUpdate",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ReviewUpdate(BaseModel):\n    content: str\n    rating: float\nclass ReviewModel(BaseModel):\n    id: int\n    content: str\n    rating: int\n    company_id: int\n    user_id: int\n    user_name: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewModel",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class ReviewModel(BaseModel):\n    id: int\n    content: str\n    rating: int\n    company_id: int\n    user_id: int\n    user_name: str\nclass CompanyCreate(BaseModel):\n    name: str\n    description: str",
         "detail": "back.schemas",
         "documentation": {}
     },
@@ -1340,34 +1423,7 @@
         "kind": 6,
         "importPath": "back.schemas",
         "description": "back.schemas",
-        "peekOfCode": "class CompanyListModel(BaseModel):\n    id: int\n    name: str\n    rating: float\n    min_price: Optional[float]\n    max_price: Optional[float]\n    project_count: int\n    user_name: str\nclass ReviewCreate(BaseModel):\n    content: str",
-        "detail": "back.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "ReviewCreate",
-        "kind": 6,
-        "importPath": "back.schemas",
-        "description": "back.schemas",
-        "peekOfCode": "class ReviewCreate(BaseModel):\n    content: str\n    rating: int\nclass ReviewUpdate(BaseModel):\n    content: str\n    rating: float\nclass ReviewModel(BaseModel):\n    id: int\n    content: str\n    rating: int",
-        "detail": "back.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "ReviewUpdate",
-        "kind": 6,
-        "importPath": "back.schemas",
-        "description": "back.schemas",
-        "peekOfCode": "class ReviewUpdate(BaseModel):\n    content: str\n    rating: float\nclass ReviewModel(BaseModel):\n    id: int\n    content: str\n    rating: int\n    company_id: int\n    user_id: int\n    user_name: str",
-        "detail": "back.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "ReviewModel",
-        "kind": 6,
-        "importPath": "back.schemas",
-        "description": "back.schemas",
-        "peekOfCode": "class ReviewModel(BaseModel):\n    id: int\n    content: str\n    rating: int\n    company_id: int\n    user_id: int\n    user_name: str",
+        "peekOfCode": "class CompanyListModel(BaseModel):\n    id: int\n    name: str\n    rating: float\n    min_price: Optional[float]\n    max_price: Optional[float]\n    project_count: int\n    review_count: int\n    description: str\n    user_name: str",
         "detail": "back.schemas",
         "documentation": {}
     },
@@ -1403,7 +1459,7 @@
         "kind": 2,
         "importPath": "back.utils",
         "description": "back.utils",
-        "peekOfCode": "def validate_phone_number(phone):\n    \"\"\"Проверяет номер телефона на соответствие международному формату\"\"\"\n    pattern = r'^\\+?\\d{10,15}$'  # Разрешает + в начале и 10-15 цифр\n    return re.match(pattern, phone) is not None\ndef validate_email(email):\n    \"\"\"Проверяет, является ли email корректным\"\"\"\n    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$'\n    return re.match(pattern, email) is not None\ndef validate_inn(inn):\n    \"\"\"Валидация ИНН (идентификационного номера налогоплательщика)\"\"\"",
+        "peekOfCode": "def validate_phone_number(phone):\n    \"\"\"Проверяет номер телефона на соответствие международному формату\"\"\"\n    if (phone == ''):\n        return True\n    pattern = r'^\\+?\\d{10,15}$'  # Разрешает + в начале и 10-15 цифр\n    return re.match(pattern, phone) is not None\ndef validate_email(email):\n    \"\"\"Проверяет, является ли email корректным\"\"\"\n    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$'\n    return re.match(pattern, email) is not None",
         "detail": "back.utils",
         "documentation": {}
     },

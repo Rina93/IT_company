@@ -1,7 +1,7 @@
 // Уровни доступа
 
 // Пример инициализации роли
-const currentUserRole = 'admin'; // Меняется на основе логики авторизации
+const currentUserRole = 'organization'; // Меняется на основе логики авторизации
 setAccessLevel(currentUserRole);
 
 const accessLevels = {
@@ -41,7 +41,7 @@ function setAccessLevel(role) {
             organizationProfileButton.classList.remove('d-none');
         }
     }
-    
+
     // Управление доступом к страницам и разделам
     const accessiblePages = accessLevels[role].canAccess;
     const currentPage = window.location.pathname.split('/').pop(); // Получаем текущую страницу
@@ -82,11 +82,7 @@ function setAccessLevel(role) {
             innInput.disabled = false; // разрешаем редактировать ИНН
         }
 
-
-
-
-
-// Комментарии на странице организации
+        // Комментарии на странице организации
         // Редактирование комментариев (только для пользователей и администраторов)
         if (role === 'user' || role === 'admin') {
             commentEditButtons.forEach(function (button) {
@@ -124,5 +120,60 @@ function setAccessLevel(role) {
                 }
             });
         });
+        
+        let isEditing = false;
+
+        function toggleEditMode() {
+            const editButton = document.getElementById("editButton");
+            const description = document.getElementById("description");
+            const contactInfoItems = document.querySelectorAll("#contactInfo span, #contactInfo a");
+            const servicesList = document.querySelectorAll("section.mb-5 ul li"); // Услуги
+            const portfolioCards = document.querySelectorAll("section.mb-5 .card-title, section.mb-5 .card-text"); // Портфолио
+
+            if (!isEditing) {
+                // Включаем режим редактирования
+                editButton.textContent = "Сохранить";
+                description.contentEditable = "true";
+                contactInfoItems.forEach(item => item.contentEditable = "true");
+                servicesList.forEach(item => item.contentEditable = "true");
+                portfolioCards.forEach(item => item.contentEditable = "true");
+
+                // Добавляем стили для визуального указания редактируемых полей
+                description.style.border = "1px solid #ccc";
+                contactInfoItems.forEach(item => item.style.border = "1px solid #ccc");
+                servicesList.forEach(item => item.style.border = "1px solid #ccc");
+                portfolioCards.forEach(item => item.style.border = "1px solid #ccc");
+
+            } else {
+                // Сохраняем изменения
+                editButton.textContent = "Редактировать";
+                description.contentEditable = "false";
+                contactInfoItems.forEach(item => item.contentEditable = "false");
+                servicesList.forEach(item => item.contentEditable = "false");
+                portfolioCards.forEach(item => item.contentEditable = "false");
+
+                // Убираем стили
+                description.style.border = "none";
+                contactInfoItems.forEach(item => item.style.border = "none");
+                servicesList.forEach(item => item.style.border = "none");
+                portfolioCards.forEach(item => item.style.border = "none");
+
+                // Логирование сохраненных данных (можно заменить на отправку данных на сервер)
+                console.log("Описание компании:", description.textContent);
+                contactInfoItems.forEach((item, index) => {
+                    console.log(`Контактная информация ${index + 1}:`, item.textContent);
+                });
+                console.log("Услуги:");
+                servicesList.forEach((item, index) => {
+                    console.log(`Услуга ${index + 1}:`, item.textContent);
+                });
+                console.log("Портфолио:");
+                portfolioCards.forEach((item, index) => {
+                    console.log(`Портфолио элемент ${index + 1}:`, item.textContent);
+                });
+            }
+
+            isEditing = !isEditing;
+        }
     });
 }

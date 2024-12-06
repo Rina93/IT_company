@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение стилей CSS, BCSS, B-icons -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<header class="bg-dark py-3"> <!-- Шапка сайта -->
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="header-nav">
+            <a href="index.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-house-fill"></i> Главная
+            </a>
+            <a id="catalogButton" href="catalog.html" class="me-4 text-white text-decoration-none"  hidden>
+                <i class="bi bi-list-ul"></i> Каталог
+            </a>
+            <a href="about.html" class="me-4 text-white text-decoration-none">
+                <i class="bi bi-info-circle"></i> О нас
+            </a>
+        </div>
+        <div class="header-actions">
+            <button id="loginButton" type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+            <button id="registerButton" type="button" class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+            <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary" hidden>Личный кабинет</a>
+        </div>
+    </div>
+</header>
+<div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1055;">
+    <div id="toastTemplate" class="toast border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
+        <div class="toast-header border-0">
+            <span id="toastIcon" class="rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 30px; height: 30px;"></span>
+            <strong id="toastTitle" class="me-auto text-dark"></strong>
+        </div>
+        <div id="toastBody" class="toast-body text-white rounded-bottom"></div>
+    </div>
+</div>
+<SignInUp> <!-- Модальные окна входа и регистрации -->
+    <!-- Модальное окно для Входа -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Вход в аккаунт</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите ваш Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите ваш пароль">
+                        </div>
+                        <button class="btn btn-primary w-100">Войти</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="text-center w-100">Нет аккаунта? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Зарегистрироваться</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для Регистрации -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="registerName" placeholder="Введите ваше имя">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите ваш Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите ваш пароль">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Подтвердите пароль</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Подтвердите пароль">
+                        </div>
+                        <button class="btn btn-success w-100">Зарегистрироваться</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="text-center w-100">Уже есть аккаунт? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Войти</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</SignInUp>
+<script src="js/main.js"></script>
+
+<main>
+
+    <main class="container py-5">
+        <!-- Вставка кнопки редактирования и реализация редактируемого интерфейса -->
+        <section class="mb-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 id="companyName">Профиль компании</h1>
+                <button id="deleteProfileButton" class="btn btn-danger d-none" onclick="deleteProfile()">Удалить профиль</button>
+                <button id="editButton" class="btn btn-primary" onclick="toggleEditMode()">Редактировать</button>
+            </div>
+        </section>
+    
+        <section class="mb-5" id="companyInfo">
+            <div class="row g-4">
+                <!-- Левая колонка -->
+                <div class="col-12 col-md-6">
+                    <h3>Технологии будущего</h3>
+                    <p id="description">
+                        Компания ориентированная на создании инновационных решений и оптимизацию бизнес-процессов для клиентов в разных отраслях.
+                    </p>
+                </div>
+                <!-- Правая колонка -->
+                <div class="col-12 col-md-6">
+                    <h3>Контактная информация</h3>
+                    <ul class="list-unstyled" id="contactInfo">
+                        <li><i class="bi bi-telephone"></i> Телефон: <span contenteditable="false">+7 (123) 456-78-90</span></li>
+                        <li><i class="bi bi-envelope"></i> Email: <span contenteditable="false">example@company.com</span></li>
+                        <li><i class="bi bi-globe"></i> Веб-сайт: <a href="#" contenteditable="false">companywebsite.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Услуги -->
+        <section class="mb-5">
+            <h3>Услуги</h3>
+            <ul id="servicesList">
+                <li>Кибербезопасность (23000 руб.) <button class="btn btn-danger btn-sm d-none" onclick="deleteService(this)">X</button></li>
+                <li>Консультации по IT-стратегиям (20000 руб.) <button class="btn btn-danger btn-sm d-none" onclick="deleteService(this)">X</button></li>
+                <li>Разработка программного обеспечения (12000 руб.) <button class="btn btn-danger btn-sm d-none" onclick="deleteService(this)">X</button></li>
+            </ul>
+            <button class="btn btn-success d-none" id="addServiceButton" onclick="addService()">Добавить услугу</button>
+        </section>
+    
+        <!-- Портфолио -->
+        <section class="mb-5">
+            <h3>Портфолио</h3>
+            <div class="row g-4" id="portfolioList">
+                <!-- Пример 1 -->
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">AI-Powered Customer Insignts</h5>
+                            <p class="card-text">Платформа, использующая технологии искусственного интеллекта для анализа поведения клиентов и прогнозирования их потребностей.</p>
+                            <button class="btn btn-danger btn-sm d-none" onclick="deletePortfolioItem(this)">X</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success d-none" id="addPortfolioButton" onclick="addPortfolioItem()">Добавить проект</button>
+        </section>
+    
+    </main>
+    
+    
+
+</main>
+
+
+<div class="container-fluid bg-dark text-white mt-auto"> <!-- Футер -->
+    <footer class="bg-dark py-3">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link px-2 text-white">Вернуться на главную</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link px-2 text-white">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-white">FAQs</a>
+            </li>
+        </ul>
+        <p class="text-center">© 2024 IT услуги Самары.</p>
+    </footer>
+</div>
+</body>
+</html>
