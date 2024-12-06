@@ -62,9 +62,39 @@
 
 
 
-/* Стиль для стрелок в карусели*/
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: grey;  /* Цвет стрелок */
+/* company.html */
+/* Стили для карточек комментариев */
+.card.comment {
+    width: 18%; /* Занимает 1/5 ширины контейнера */
+    min-width: 200px; /* Минимальная ширина для адаптивности */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение контента */
 }
 
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Чтобы карточка занимала всю высоту */
+}
+
+.card-text {
+    flex-grow: 1; /* Чтобы текст занимал оставшееся пространство */
+}
+
+.d-flex {
+    display: flex;
+}
+
+.gap-3 {
+    gap: 1rem; /* Добавляем отступы между карточками */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .card.comment {
+        width: 100%; /* На маленьких экранах карточки занимают всю ширину */
+    }
+}

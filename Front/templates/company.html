@@ -20,17 +20,18 @@
                 <a href="catalog.html" class="me-4 text-white text-decoration-none">
                     <i class="bi bi-list-ul"></i> Каталог
                 </a>
-                <a href="company.html" class="me-4 text-white text-decoration-none">
-                    <i class="bi bi-building"></i> Организации
-                </a>
                 <a href="about.html" class="me-4 text-white text-decoration-none">
                     <i class="bi bi-info-circle"></i> О нас
                 </a>
+                <a href="company.html" class="me-4 text-white text-decoration-none">
+                    <i class="bi bi-building"></i> Профиль организации
+                </a>
             </div>
-            <div class="header-actions">
+            <div class="header-actions"> <!-- Действия для разных уровней доступа -->
                 <button id="loginButton" type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
                 <button id="registerButton" type="button" class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
-                <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary d-none">Личный кабинет</a>
+                <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary d-none">Личный кабинет</a> <!-- По умолчанию скрыт -->
+                <a id="adminPanelButton" href="admin-panel.html" class="btn btn-danger d-none">Админ панель</a>
             </div>
         </div>
     </header>
@@ -108,6 +109,7 @@
         <section class="mb-4">
             <div class="d-flex justify-content-between align-items-center">
                 <h1>Название Компании</h1>
+                <button id="editCompanyProfileButton" class="btn btn-warning d-none">Редактировать профиль</button>
             </div>
         </section>
     
@@ -184,79 +186,38 @@
             </div>
         </section>
     
-        <!-- Отзывы -->
-        <section class="container my-5">
-            <h2 class="text-center mb-4">Отзывы</h2>
-            <div class="row g-4">
-                <!-- Отзыв 1 -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Иван Иванов</h5>
-                            <p class="card-text">
-                                Отличная компания! Быстро и качественно выполнили работу. Рекомендую всем, кто ищет надёжных исполнителей.
-                            </p>
-                            <div class="d-flex align-items-center">
-                                <span class="me-2 text-warning">
-                                    <!-- Рейтинг звёздами -->
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-half"></i>
-                                </span>
-                                <small class="text-muted">4.5/5</small>
-                            </div>
+        <!-- Комментарии -->
+        <section class="mb-5">
+            <h3>Последние комментарии</h3>
+            <!-- Отзыв 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Елена Петрова</h5>
+                        <p class="card-text">
+                            Очень профессиональный подход к делу. Всё сделали точно в срок. Сотрудничество прошло идеально.
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <span class="me-2 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </span>
+                            <small class="text-muted">5/5</small>
                         </div>
-                    </div>
-                </div>
-        
-                <!-- Отзыв 2 -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Елена Петрова</h5>
-                            <p class="card-text">
-                                Очень профессиональный подход к делу. Всё сделали точно в срок. Сотрудничество прошло идеально.
-                            </p>
-                            <div class="d-flex align-items-center">
-                                <span class="me-2 text-warning">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                </span>
-                                <small class="text-muted">5/5</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Отзыв 3 -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Сергей Смирнов</h5>
-                            <p class="card-text">
-                                Работой остался доволен. Однако пришлось уточнять некоторые детали, из-за чего сроки немного затянулись.
-                            </p>
-                            <div class="d-flex align-items-center">
-                                <span class="me-2 text-warning">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star"></i>
-                                    <i class="bi bi-star"></i>
-                                </span>
-                                <small class="text-muted">3/5</small>
-                            </div>
+                        <!-- Кнопки редактирования и удаления комментария -->
+                        <div class="d-flex mt-3">
+                            <button class="btn btn-warning me-2 edit-comment-btn d-none">Редактировать</button>
+                            <button class="btn btn-danger delete-comment-btn d-none">Удалить</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
+    
     </main>
 
 <!-- Футер -->
@@ -278,5 +239,6 @@
 </div>
     <!-- Подключение Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="C:\Users\Sever\OneDrive\Dokumente\GitHub\IT_company\Front\static\JS\access-control.js"></script> <!-- Подключение внешнего JS файла -->
 </body>
 </html>

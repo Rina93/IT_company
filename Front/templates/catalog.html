@@ -10,29 +10,30 @@
 </head>
 <body>
 
-<header class="bg-dark py-3"> <!-- Шапка сайта -->
-    <div class="container d-flex justify-content-between align-items-center">
-        <div class="header-nav">
-            <a href="index.html" class="me-4 text-white text-decoration-none">
-                <i class="bi bi-house-fill"></i> Главная
-            </a>
-            <a href="catalog.html" class="me-4 text-white text-decoration-none">
-                <i class="bi bi-list-ul"></i> Каталог
-            </a>
-            <a href="company.html" class="me-4 text-white text-decoration-none">
-                <i class="bi bi-building"></i> Организации
-            </a>
-            <a href="about.html" class="me-4 text-white text-decoration-none">
-                <i class="bi bi-info-circle"></i> О нас
-            </a>
+    <header class="bg-dark py-3"> <!-- Шапка сайта -->
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="header-nav">
+                <a href="index.html" class="me-4 text-white text-decoration-none">
+                    <i class="bi bi-house-fill"></i> Главная
+                </a>
+                <a href="catalog.html" class="me-4 text-white text-decoration-none">
+                    <i class="bi bi-list-ul"></i> Каталог
+                </a>
+                <a href="about.html" class="me-4 text-white text-decoration-none">
+                    <i class="bi bi-info-circle"></i> О нас
+                </a>
+                <a href="company.html" class="me-4 text-white text-decoration-none">
+                    <i class="bi bi-building"></i> Профиль организации
+                </a>
+            </div>
+            <div class="header-actions"> <!-- Действия для разных уровней доступа -->
+                <button id="loginButton" type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+                <button id="registerButton" type="button" class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+                <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary d-none">Личный кабинет</a> <!-- По умолчанию скрыт -->
+                <a id="adminPanelButton" href="admin-panel.html" class="btn btn-danger d-none">Админ панель</a>
+            </div>
         </div>
-        <div class="header-actions">
-            <button id="loginButton" type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-            <button id="registerButton" type="button" class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
-            <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary d-none">Личный кабинет</a>
-        </div>
-    </div>
-</header>
+    </header>
 
 
 <SignInUp> <!-- Модальные окна входа и регистрации -->
@@ -167,7 +168,7 @@
                                 </div>
                             </div>
                             <div>
-                                <button class="btn btn-outline-primary btn-sm me-2">Посмотреть профиль</button>
+                                <a href="company.html" class="btn btn-outline-primary btn-sm me-2"> Посмотреть профиль</a>
                                 <button class="btn btn-outline-secondary btn-sm">Посетить веб-сайт</button>
                             </div>
                         </div>
@@ -189,45 +190,6 @@
                             <!-- Описание услуги -->
                             <p class="card-text">
                                 Мы предоставляем полный спектр услуг по разработке веб-сайтов, включая создание индивидуальных дизайнов, интеграцию с внешними сервисами и оптимизацию для мобильных устройств. Наша команда профессионалов работает с каждым клиентом индивидуально, чтобы гарантировать лучший результат.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Карточка 2 (пример) -->
-                <div class="col-12">
-                    <div class="card">
-                        <!-- Заголовок услуги и логотип с названием -->
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div>
-                                <h5 class="card-title mb-0">Разработка мобильных приложений</h5>
-                                <div class="d-flex align-items-center">
-                                    <span class="h6 mb-0">Компания 2</span>
-                                </div>
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-primary btn-sm me-2">Посмотреть профиль</button>
-                                <button class="btn btn-outline-secondary btn-sm">Посетить веб-сайт</button>
-                            </div>
-                        </div>
-        
-                        <!-- Оценка и количество отзывов -->
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between mb-3">
-                                <div class="d-flex align-items-center">
-                                    <span class="badge bg-warning text-dark me-2">4.8</span>
-                                    <span class="text-muted">25 отзывов</span>
-                                </div>
-                            </div>
-        
-                            <!-- Цена -->
-                            <div class="d-flex justify-content-between mb-3">
-                                <div class="text-muted">Минимальная цена: <strong>120000 руб.</strong></div>
-                            </div>
-                            
-                            <!-- Описание услуги -->
-                            <p class="card-text">
-                                Мы специализируемся на создании высококачественных мобильных приложений для iOS и Android. Наша цель — создать удобный и функциональный продукт, который будет отвечать всем требованиям заказчика.
                             </p>
                         </div>
                     </div>
@@ -270,5 +232,6 @@
 
     <!-- Подключение Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="C:\Users\Sever\OneDrive\Dokumente\GitHub\IT_company\Front\static\JS\access-control.js"></script> <!-- Подключение внешнего JS файла -->
 </body>
 </html>
