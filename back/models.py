@@ -24,6 +24,7 @@ companies = Table(
     Column("email", String(255), nullable=False),
     Column("inn", String(12), nullable=False),
     Column("phone_number", String(15), nullable=False),
+    Column("site", String(255), nullable=False),
     Column("user_id", Integer, ForeignKey("users.id")),
 )
 

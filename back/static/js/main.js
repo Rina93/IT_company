@@ -2,11 +2,36 @@ const loginSubmit = document.querySelector("#loginModal .btn-primary");
 const registerSubmit = document.querySelector("#registerModal .btn-success");
 const toastContainer = document.querySelector(".toast-container");
 
-const jwt = getJWT();
+let userId = 0;
+let userRole = "unknown";
+
+const jwt = getCookie("jwt");
 
 if (jwt) {
-  loggedIn();
+  userId = getCookie("userId");
+  userRole = getCookie("userRole");
+
+  const roleMap = {
+    user: "пользователя",
+    company: "компании",
+    admin: "администратора",
+  };
+
+  document.getElementById(
+    "dashboardButton"
+  ).textContent = `Личный кабинет ${roleMap[userRole]}`;
+
+  setButtonHidden("#loginButton", true);
+  setButtonHidden("#registerButton", true);
+  setButtonHidden("#dashboardButton", false);
+  setButtonHidden("#catalogButton", false);
+
   axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
+} else {
+  setButtonHidden("#loginButton", false);
+  setButtonHidden("#registerButton", false);
+  setButtonHidden("#dashboardButton", true);
+  setButtonHidden("#catalogButton", true);
 }
 
 if (loginSubmit) {
@@ -17,7 +42,7 @@ if (registerSubmit) {
   registerSubmit.addEventListener("click", register);
 }
 
-function setJWT(value) {
+function setCookie(name, value) {
   const options = {
     path: "/",
     "max-age": 50000,
@@ -26,7 +51,7 @@ function setJWT(value) {
   };
 
   const cookieString =
-    `jwt=${encodeURIComponent(value)};` +
+    `${name}=${encodeURIComponent(value)};` +
     Object.entries(options)
       .map(([key, val]) => (val === true ? key : `${key}=${val}`))
       .join("; ");
@@ -35,9 +60,9 @@ function setJWT(value) {
   axios.defaults.headers.common["Authorization"] = `Bearer ${value}`;
 }
 
-function getJWT() {
+function getCookie(cookieName) {
   const cookies = document.cookie.split("; ");
-  const cookie = cookies.find((row) => row.startsWith(`${"jwt"}=`));
+  const cookie = cookies.find((row) => row.startsWith(`${cookieName}=`));
   return cookie ? decodeURIComponent(cookie.split("=")[1]) : null;
 }
 
@@ -72,19 +97,24 @@ async function login(e) {
         },
       }
     );
-
-    notify("Авторизация прошла успешно!");
-    setJWT(token.data.access_token);
-    setTimeout(() => window.location.reload(), 1500);
+    setCookie("jwt", token.data.access_token);
+    setCookie("userId", token.data.id);
+    setCookie("userRole", token.data.role);
   } catch (e) {
     notify(e.response.data.detail ?? e.response.data, "error");
+    return;
   }
+
+  notify("Авторизация прошла успешно!");
+
+  setTimeout(() => window.location.reload(), 1500);
 }
 
 async function register(e) {
   const name = document.querySelector("#registerName").value;
   const email = document.querySelector("#registerEmail").value;
   const password = document.querySelector("#registerPassword").value;
+  const isCompany = document.querySelector("#registerRole").checked;
   const confirmPassword = document.querySelector(
     "#registerConfirmPassword"
   ).value;
@@ -112,7 +142,7 @@ async function register(e) {
       phone_number: "",
       password,
       name,
-      is_company: false,
+      is_company: isCompany,
     });
     document.querySelector("#registerModal button").click();
 
@@ -122,15 +152,10 @@ async function register(e) {
   }
 }
 
-function loggedIn() {
-  setButtonHidden("#loginButton", true);
-  setButtonHidden("#registerButton", true);
-  setButtonHidden("#dashboardButton", false);
-  setButtonHidden("#catalogButton", false);
-}
-
 function logout() {
   document.cookie = `jwt=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure; samesite=Strict`;
+  document.cookie = `userRole=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure; samesite=Strict`;
+  document.cookie = `userId=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure; samesite=Strict`;
   location.href = `index.html`;
 }
 

@@ -2,8 +2,8 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from sqlalchemy import select
 from asyncpg.exceptions import UniqueViolationError
 from database import database
-from models import users, services
-from schemas import UserCreate, TokenModel, UserModel, UserPasswordUpdate
+from models import users, services, companies
+from schemas import UserCreate, TokenModel, UserModel, UserDetail, UserPasswordUpdate
 from utils import get_password_hash, verify_password, create_access_token
 from datetime import timedelta
 from fastapi.security import OAuth2PasswordRequestForm
@@ -56,7 +56,7 @@ async def register(user: UserCreate):
 
     return {"message": "Пользователь успешно создан"}
 
-@app.post("/token", response_model=TokenModel)
+@app.post("/token", response_model=dict)
 async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     query = users.select().where(users.c.email == form_data.username)
     user = await database.fetch_one(query)
@@ -67,7 +67,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
         "role": user["role"],
         "phone_number": user["phone_number"],
         "name": user["name"]}, expires_delta=timedelta(hours=16))
-    return {"access_token": access_token, "token_type": "bearer"}
+    return {"access_token": access_token, "id": user["id"], "role": user["role"], "token_type": "bearer"}
 
 @app.get("/users", response_model=list[UserModel])
 @role_required(["admin"])
@@ -83,9 +83,15 @@ async def change_password(data: UserPasswordUpdate, current_user: dict = Depends
     
     return {"message": "Пароль успешно обновлен"}
 
-@app.get("/me", response_model=UserModel)
+@app.get("/me", response_model=UserDetail)
 async def get_me(current_user: dict = Depends(get_current_user)):
-    query = users.select().where(users.c.id == current_user['user_id'])
+    query = (
+        users.join(companies, companies.c.user_id == users.c.id, isouter=True)
+            .select()
+            .where(users.c.id == current_user['user_id'])
+            .with_only_columns(users, companies.c.id.label("company_id")) 
+    )
+
     return await database.fetch_one(query)
 
 @app.put("/me", response_model=dict)
@@ -101,4 +107,4 @@ async def change_user(data: dict, current_user: dict = Depends(get_current_user)
 @app.get("/services", response_model=List[dict])
 async def all_unique_services(current_user: dict = Depends(get_current_user)):
     query = select(services.c.name).distinct()
-    return await database.fetch_all(query) 
+    return list(map(lambda x: {'name': x['name']}, await database.fetch_all(query))) 

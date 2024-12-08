@@ -19,7 +19,6 @@ async function loadServiceFilters() {
   } catch (e) {
     notify(e.response.data.detail ?? e.response.data, "error");
   }
-
   document.getElementById(
     "serviceInput"
   ).innerHTML = `<option value="">Все услуги</option>
@@ -48,14 +47,17 @@ async function renderCompanies(companies) {
       (c) => `<div class="col-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <div>
-                        <h5 class="card-title mb-0">${c.name}</h5>
+                    <div class="maxw-7">
+                      <h5 class="card-title mb-1">${c.name}</h5>
+                      <img src="images/mini-logo.png" alt="Логотип компании" class="img-fluid me-3 mini-logo">
                     </div>
                     <div>
                         <button class="btn btn-outline-primary btn-sm me-2" onclick="openCompany(${
                           c.id
                         })">Посмотреть профиль</button>
-                        <button class="btn btn-outline-secondary btn-sm">Посетить веб-сайт</button>
+                        <button onclick="visitSite('${
+                          c.site
+                        }')" class="btn btn-outline-secondary btn-sm">Посетить веб-сайт</button>
                     </div>
                 </div>
                 <div class="card-body">
@@ -104,4 +106,8 @@ function getFilters() {
 
 function openCompany(id) {
   location.href = `company.html?id=${id}`;
+}
+
+function visitSite(site) {
+  window.open(site, "_blank");
 }

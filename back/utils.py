@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from fastapi import Depends
 from fastapi.security import OAuth2PasswordBearer
 import re
+from fastapi import HTTPException
 
 SECRET_KEY = "secret_key"
 ALGORITHM = "HS256"
@@ -42,7 +43,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
 
 def validate_phone_number(phone):
     """Проверяет номер телефона на соответствие международному формату"""
-    if (phone == ''):
+    if phone == '':
         return True
     pattern = r'^\+?\d{10,15}$'  # Разрешает + в начале и 10-15 цифр
     return re.match(pattern, phone) is not None

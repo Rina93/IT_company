@@ -9,7 +9,7 @@
     <link href="css/main.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Компании</title>
+    <title>Организация</title>
 </head>
 <body>
 <!-- Шапка сайта -->
@@ -19,7 +19,7 @@
             <a href="index.html" class="me-4 text-white text-decoration-none">
                 <i class="bi bi-house-fill"></i> Главная
             </a>
-            <a id="catalogButton" href="catalog.html" class="me-4 text-white text-decoration-none"  hidden>
+            <a id="catalogButton" href="catalog.html" class="me-4 text-white text-decoration-none" hidden>
                 <i class="bi bi-list-ul"></i> Каталог
             </a>
             <a href="about.html" class="me-4 text-white text-decoration-none">
@@ -27,8 +27,8 @@
             </a>
         </div>
         <div class="header-actions">
-            <button id="loginButton" type="button" class="btn btn-outline-light me-2 d-none" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-            <button id="registerButton" type="button" class="btn btn-warning me-2 d-none" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+            <button id="loginButton" type="button" class="btn btn-outline-light me-2 d-none" data-bs-toggle="modal" data-bs-target="#loginModal" hidden>Войти</button>
+            <button id="registerButton" type="button" class="btn btn-warning me-2 d-none" data-bs-toggle="modal" data-bs-target="#registerModal" hidden>Зарегистрироваться</button>
             <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary" hidden>Личный кабинет</a>
         </div>
     </div>
@@ -45,10 +45,14 @@
 <script src="js/main.js"></script>
 
 <main class="container py-5">
-    <!-- Название компании -->
     <section class="mb-4">
-        <div class="d-flex justify-content-between align-items-center">
-            <h1 id="companyName"></h1>
+        <div class="d-flex justify-content-between align-items-start">
+            <div class="maxw-7">
+                <img src="images/company-logo.png" alt="Логотип компании" class="img-fluid mb-3 company-logo">
+                <h1 id="companyName">Профиль компании</h1>
+            </div>
+            <button id="deleteProfileButton" class="btn btn-danger me-1" onclick="deleteProfile()" hidden>Удалить профиль</button>
+            <button id="editButton" class="btn btn-primary" onclick="toggleEditMode()" hidden>Редактировать</button>
         </div>
     </section>
 
@@ -66,8 +70,9 @@
             <div class="col-12 col-md-6">
                 <h3>Контактная информация</h3>
                 <ul class="list-unstyled">
-                    <li><i class="bi bi-telephone"></i> Телефон: <span id="companyPhone"> </span></li>
-                    <li><i class="bi bi-envelope"></i> Email: <span id="companyEmail"> </span></li>
+                    <li><i class="bi bi-telephone"></i> Телефон: <span id="companyPhone" class="minw-5"> </span></li>
+                    <li><i class="bi bi-envelope"></i> Email: <span id="companyEmail" class="minw-5"> </span></li>
+                    <li><i class="bi bi-globe"></i> Веб-сайт: <a id="webSiteLink" class="minw-5" target="_blank"></a></li>
                 </ul>
             </div>
         </div>
@@ -79,6 +84,7 @@
         <ul id="companyServices">
             
         </ul>
+        <button class="btn btn-success" id="addServiceButton" onclick="addService()" hidden>Добавить услугу</button>
     </section>
 
     <!-- Портфолио -->
@@ -87,6 +93,7 @@
         <div id="companyProjects" class="row g-4">
             
         </div>
+        <button class="btn btn-success mt-3" id="addProjectButton" onclick="addProjectItem()" hidden>Добавить проект</button>
     </section>
 
     <!-- Отзывы -->

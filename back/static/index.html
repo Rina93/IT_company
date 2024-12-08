@@ -27,8 +27,8 @@
             </a>
         </div>
         <div class="header-actions"> <!-- Добавить d-none в класс перед "Личный кабинет" -->
-            <button id="loginButton" type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-            <button id="registerButton" type="button" class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+            <button id="loginButton" type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal" hidden>Войти</button>
+            <button id="registerButton" type="button" class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#registerModal" hidden>Зарегистрироваться</button>
             <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary" hidden>Личный кабинет</a>
         </div>
     </div>
@@ -96,6 +96,10 @@
                         <div class="mb-3">
                             <label for="registerConfirmPassword" class="form-label">Подтвердите пароль</label>
                             <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Подтвердите пароль">
+                        </div>
+                        <div class="mb-3">
+                            <input type="checkbox" id="registerRole">
+                            <label for="registerRole" class="form-label">Я компания</label>
                         </div>
                         <button class="btn btn-success w-100">Зарегистрироваться</button>
                     </div>

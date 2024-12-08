@@ -79,7 +79,6 @@
     height: 100px; /* Высота логотипа */
     margin-right: 10px; /* Отступ справа */
     margin-bottom: 10px; /* Отступ снизу */
-    
 }
 
 
@@ -98,7 +97,6 @@
     background-color: #f9f9f9;
     text-align: center;
 }
-
 
 
 /* company.html */
@@ -136,4 +134,39 @@
     .card.comment {
         width: 100%; /* На маленьких экранах карточки занимают всю ширину */
     }
+}
+
+#companyPhone, #companyEmail, #webSiteLink, #companyName {
+    display: inline-block;
+}
+.minw-5 {
+    display: inline-block;
+    min-width: 5rem;
+}
+
+.maxw-7 {
+    max-width: 70%;
+}
+
+.catalog-company-name {
+    max-width: 70%;
+}
+
+.company-logo {
+    display:block; 
+    max-width: 128px; 
+    max-height: 128px;
+}
+
+.mini-logo {
+    max-width: 50x; 
+    max-height: 50px;
+}
+
+.project-logo {
+    display: none;
+    margin-left: .8rem;
+    margin-top: .8rem;
+    max-width: 100px; 
+    max-height: 100px;
 }

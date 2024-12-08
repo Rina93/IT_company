@@ -1,3 +1,14 @@
+const roleMap = {
+  user: "Пользователь",
+  admin: "Администратор",
+  company: "Компания",
+};
+
+document.getElementById("profileRole").textContent = roleMap[userRole];
+
+if (userRole == "company")
+  document.getElementById("openCompanyButton").hidden = false;
+
 loadInfo();
 
 async function loadInfo() {
@@ -9,9 +20,12 @@ async function loadInfo() {
     return;
   }
 
-  document.querySelector("#fullName").value = me.name;
-  document.querySelector("#email").value = me.email;
-  document.querySelector("#phone").value = me.phone_number;
+  document.getElementById("openCompanyButton").href =
+    "company.html" + (me.company_id ? `?id=${me.company_id}` : "");
+
+  document.getElementById("fullName").value = me.name;
+  document.getElementById("email").value = me.email;
+  document.getElementById("phone").value = me.phone_number;
 }
 
 document

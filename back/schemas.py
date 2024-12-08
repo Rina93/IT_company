@@ -19,6 +19,14 @@ class UserModel(BaseModel):
     name: str
     role: str
 
+class UserDetail(BaseModel):
+    id: int
+    email: str
+    phone_number: str
+    name: str
+    role: str
+    company_id: Optional[int]
+
 class UserPasswordUpdate(BaseModel):
     password: str
 
@@ -76,7 +84,7 @@ class CompanyCreate(BaseModel):
     email: str
     inn: str
     phone_number: str
-    user_id: int
+    site: str
 
 class CompanyUpdate(BaseModel):
     name: str
@@ -85,6 +93,7 @@ class CompanyUpdate(BaseModel):
     email: str
     inn: str
     phone_number: str
+    site: str
 
 class CompanyModel(BaseModel):
     id: int
@@ -95,6 +104,7 @@ class CompanyModel(BaseModel):
     email: str
     inn: str
     phone_number: str
+    site: str
     user_id: int
 
 class CompanyDetail(BaseModel):
@@ -110,6 +120,7 @@ class CompanyDetail(BaseModel):
     user_name: str
     current_user_id: int
     is_admin: bool
+    site: str
     min_price: Optional[float]
     max_price: Optional[float]
     services: List[ServiceModel]
@@ -126,3 +137,4 @@ class CompanyListModel(BaseModel):
     review_count: int
     description: str
     user_name: str
+    site: str

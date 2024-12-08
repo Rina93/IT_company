@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Главная - IT Услуги Самары</title>
+    <title>Личный кабинет</title>
 </head>
 
 <body>
@@ -27,8 +27,8 @@
             </a>
         </div>
         <div class="header-actions">
-            <button id="loginButton" type="button" class="btn btn-outline-light me-2 d-none" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-            <button id="registerButton" type="button" class="btn btn-warning me-2 d-none" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+            <button id="loginButton" type="button" class="btn btn-outline-light me-2 d-none" data-bs-toggle="modal" data-bs-target="#loginModal" hidden>Войти</button>
+            <button id="registerButton" type="button" class="btn btn-warning me-2 d-none" data-bs-toggle="modal" data-bs-target="#registerModal" hidden>Зарегистрироваться</button>
             <a id="dashboardButton" href="Personal-account.html" class="btn btn-primary">Личный кабинет</a>
         </div>
     </div>
@@ -44,7 +44,6 @@
 </div>
 <script src="js/main.js"></script>
 
-
 <main class="container my-5"> <!-- Основной контент -->
     <h1 class="text-center mb-4">Личный кабинет</h1>
     <div class="row">
@@ -56,6 +55,9 @@
                 </a>
                 <a href="#settings" class="list-group-item list-group-item-action" data-bs-toggle="list">
                     <i class="bi bi-gear"></i> Настройки
+                </a>
+                <a id="openCompanyButton" class="list-group-item list-group-item-action" hidden>
+                    <i class="bi bi-buildings"></i> Моя компания
                 </a>
                 <a onclick="logout()" class="list-group-item list-group-item-action text-danger">
                     <i  class="bi bi-box-arrow-right"></i> Выйти
@@ -69,7 +71,7 @@
             
             <!-- Профиль -->
             <div class="tab-pane fade show active" id="profile">
-                <h2>Профиль</h2>
+                <h2>Профиль (<span id="profileRole"></span>)</h2>
                 <div id="profileForm">
 
                     <div class="mb-3">
