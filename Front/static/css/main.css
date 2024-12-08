@@ -1,5 +1,11 @@
 /* <link rel="stylesheet" href="C:\Projects\Hackaton\IT_company\Front\static\css\main.css"> */
 
+/*Footer*/
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 
 
 /* about.html*/
@@ -98,3 +104,6 @@
         width: 100%; /* На маленьких экранах карточки занимают всю ширину */
     }
 }
+
+
+

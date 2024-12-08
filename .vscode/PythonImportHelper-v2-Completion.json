@@ -200,6 +200,14 @@
         "documentation": {}
     },
     {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "select",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -209,6 +217,30 @@
     },
     {
         "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "insert",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "update",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "delete",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -336,6 +368,30 @@
         "documentation": {}
     },
     {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "IntegrityError",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
         "label": "UniqueViolationError",
         "importPath": "asyncpg.exceptions",
         "description": "asyncpg.exceptions",
@@ -393,6 +449,14 @@
     },
     {
         "label": "database",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
         "importPath": "database",
         "description": "database",
         "isExtraImport": true,
@@ -560,6 +624,14 @@
         "documentation": {}
     },
     {
+        "label": "companies",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
         "label": "CompanyCreate",
         "importPath": "schemas",
         "description": "schemas",
@@ -713,6 +785,14 @@
     },
     {
         "label": "UserModel",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetail",
         "importPath": "schemas",
         "description": "schemas",
         "isExtraImport": true,
@@ -1064,14 +1144,6 @@
         "documentation": {}
     },
     {
-        "label": "relationship",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
-        "documentation": {}
-    },
-    {
         "label": "CryptContext",
         "importPath": "passlib.context",
         "description": "passlib.context",
@@ -1117,7 +1189,7 @@
         "kind": 2,
         "importPath": "back.api.company",
         "description": "back.api.company",
-        "peekOfCode": "def validate_company_data(company_data):\n    if not validate_email(company_data.email):\n        raise HTTPException(status_code=400, detail=\"Невалидная почта\")\n    if not validate_phone_number(company_data.phone_number):\n        raise HTTPException(status_code=400, detail=\"Невалидный номер телефона\")\n    (is_valid_inn, error) = validate_inn(company_data.inn)\n    if not is_valid_inn:\n        raise HTTPException(status_code=400, detail=error)",
+        "peekOfCode": "def validate_company_data(company_data):\n    if not validate_email(company_data['email']):\n        raise HTTPException(status_code=400, detail=\"Невалидная почта\")\n    if not validate_phone_number(company_data['phone_number']):\n        raise HTTPException(status_code=400, detail=\"Невалидный номер телефона\")\n    if company_data['inn']:\n        (is_valid_inn, error) = validate_inn(company_data['inn'])\n        if not is_valid_inn:\n            raise HTTPException(status_code=400, detail=error)",
         "detail": "back.api.company",
         "documentation": {}
     },
@@ -1126,7 +1198,7 @@
         "kind": 5,
         "importPath": "back.api.company",
         "description": "back.api.company",
-        "peekOfCode": "router = APIRouter()\n# Добавление компании (только для администраторов)\n@router.post(\"/\", response_model=dict)\n@role_required([\"admin\"])\nasync def create_company(company: CompanyCreate, current_user: dict = Depends(get_current_user)):\n    validate_company_data(company)\n    query = companies.insert().values(name=company.name, \n        rating=0, \n        description=company.description, \n        staff=company.staff, ",
+        "peekOfCode": "router = APIRouter()\n# \"id\": 34, \"name\": \"1\", \"description\": \"Правильно описание\", \"staff\": 1, \"email\": \"1@mail.ru\", \"phone_number\": \"12345678910\", \"inn\": \"7743013901\", \"site\": \"1\", \"services\": [{\"price\": 3,\"name\": \"string\"}], \"projects\": [{\"name\": \"string\", \"description\": \"string\"}]\n# Добавление компании \n@router.post(\"/\", response_model=dict)\n@role_required([\"admin\", \"company\"])\nasync def create_update_company(company_data: dict, current_user: dict = Depends(get_current_user)):\n    validate_company_data(company_data)\n    session = sessionmaker(bind=engine)()\n    company_id = company_data.get(\"id\")\n    services_data = company_data.pop(\"services\", [])",
         "detail": "back.api.company",
         "documentation": {}
     },
@@ -1279,7 +1351,7 @@
         "kind": 6,
         "importPath": "back.schemas",
         "description": "back.schemas",
-        "peekOfCode": "class TokenModel(BaseModel):\n    access_token: str\n    token_type: str\nclass UserModel(BaseModel):\n    id: int\n    email: str\n    phone_number: str\n    name: str\n    role: str\nclass UserPasswordUpdate(BaseModel):",
+        "peekOfCode": "class TokenModel(BaseModel):\n    access_token: str\n    token_type: str\nclass UserModel(BaseModel):\n    id: int\n    email: str\n    phone_number: str\n    name: str\n    role: str\nclass UserDetail(BaseModel):",
         "detail": "back.schemas",
         "documentation": {}
     },
@@ -1288,7 +1360,16 @@
         "kind": 6,
         "importPath": "back.schemas",
         "description": "back.schemas",
-        "peekOfCode": "class UserModel(BaseModel):\n    id: int\n    email: str\n    phone_number: str\n    name: str\n    role: str\nclass UserPasswordUpdate(BaseModel):\n    password: str\nclass ServiceCreate(BaseModel):\n    name: str",
+        "peekOfCode": "class UserModel(BaseModel):\n    id: int\n    email: str\n    phone_number: str\n    name: str\n    role: str\nclass UserDetail(BaseModel):\n    id: int\n    email: str\n    phone_number: str",
+        "detail": "back.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetail",
+        "kind": 6,
+        "importPath": "back.schemas",
+        "description": "back.schemas",
+        "peekOfCode": "class UserDetail(BaseModel):\n    id: int\n    email: str\n    phone_number: str\n    name: str\n    role: str\n    company_id: Optional[int]\nclass UserPasswordUpdate(BaseModel):\n    password: str\nclass ServiceCreate(BaseModel):",
         "detail": "back.schemas",
         "documentation": {}
     },
@@ -1387,7 +1468,7 @@
         "kind": 6,
         "importPath": "back.schemas",
         "description": "back.schemas",
-        "peekOfCode": "class CompanyCreate(BaseModel):\n    name: str\n    description: str\n    staff: int\n    email: str\n    inn: str\n    phone_number: str\n    user_id: int\nclass CompanyUpdate(BaseModel):\n    name: str",
+        "peekOfCode": "class CompanyCreate(BaseModel):\n    name: str\n    description: str\n    staff: int\n    email: str\n    inn: str\n    phone_number: str\n    site: str\nclass CompanyUpdate(BaseModel):\n    name: str",
         "detail": "back.schemas",
         "documentation": {}
     },
@@ -1396,7 +1477,7 @@
         "kind": 6,
         "importPath": "back.schemas",
         "description": "back.schemas",
-        "peekOfCode": "class CompanyUpdate(BaseModel):\n    name: str\n    staff: int\n    description: str\n    email: str\n    inn: str\n    phone_number: str\nclass CompanyModel(BaseModel):\n    id: int\n    name: str",
+        "peekOfCode": "class CompanyUpdate(BaseModel):\n    name: str\n    staff: int\n    description: str\n    email: str\n    inn: str\n    phone_number: str\n    site: str\nclass CompanyModel(BaseModel):\n    id: int",
         "detail": "back.schemas",
         "documentation": {}
     },
@@ -1405,7 +1486,7 @@
         "kind": 6,
         "importPath": "back.schemas",
         "description": "back.schemas",
-        "peekOfCode": "class CompanyModel(BaseModel):\n    id: int\n    name: str\n    rating: float\n    description: str\n    staff: int\n    email: str\n    inn: str\n    phone_number: str\n    user_id: int",
+        "peekOfCode": "class CompanyModel(BaseModel):\n    id: int\n    name: str\n    rating: float\n    description: str\n    staff: int\n    email: str\n    inn: str\n    phone_number: str\n    site: str",
         "detail": "back.schemas",
         "documentation": {}
     },
@@ -1459,7 +1540,7 @@
         "kind": 2,
         "importPath": "back.utils",
         "description": "back.utils",
-        "peekOfCode": "def validate_phone_number(phone):\n    \"\"\"Проверяет номер телефона на соответствие международному формату\"\"\"\n    if (phone == ''):\n        return True\n    pattern = r'^\\+?\\d{10,15}$'  # Разрешает + в начале и 10-15 цифр\n    return re.match(pattern, phone) is not None\ndef validate_email(email):\n    \"\"\"Проверяет, является ли email корректным\"\"\"\n    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$'\n    return re.match(pattern, email) is not None",
+        "peekOfCode": "def validate_phone_number(phone):\n    \"\"\"Проверяет номер телефона на соответствие международному формату\"\"\"\n    if phone == '':\n        return True\n    pattern = r'^\\+?\\d{10,15}$'  # Разрешает + в начале и 10-15 цифр\n    return re.match(pattern, phone) is not None\ndef validate_email(email):\n    \"\"\"Проверяет, является ли email корректным\"\"\"\n    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$'\n    return re.match(pattern, email) is not None",
         "detail": "back.utils",
         "documentation": {}
     },
