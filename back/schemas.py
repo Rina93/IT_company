@@ -19,6 +19,14 @@ class UserModel(BaseModel):
     name: str
     role: str
 
+class UserDetail(BaseModel):
+    id: int
+    email: str
+    phone_number: str
+    name: str
+    role: str
+    company_id: Optional[int]
+
 class UserPasswordUpdate(BaseModel):
     password: str
 
@@ -52,60 +60,6 @@ class ProjectModel(BaseModel):
     description: str
 
 
-class CompanyCreate(BaseModel):
-    name: str
-    description: str
-    staff: int
-    email: str
-    inn: str
-    phone_number: str
-    user_id: int
-
-class CompanyUpdate(BaseModel):
-    name: str
-    staff: int
-    description: str
-    email: str
-    inn: str
-    phone_number: str
-
-class CompanyModel(BaseModel):
-    id: int
-    name: str
-    rating: float
-    description: str
-    staff: int
-    email: str
-    inn: str
-    phone_number: str
-    user_id: int
-
-class CompanyDetail(BaseModel):
-    id: int
-    name: str
-    rating: float
-    description: str
-    staff: int
-    email: str
-    inn: str
-    phone_number: str
-    user_id: int
-    user_name: str
-    min_price: Optional[float]
-    max_price: Optional[float]
-    services: List[ServiceModel]
-    projects: List[ProjectModel]
-
-class CompanyListModel(BaseModel):
-    id: int
-    name: str
-    rating: float
-    min_price: Optional[float]
-    max_price: Optional[float]
-    project_count: int
-    user_name: str
-
-
 class ReviewCreate(BaseModel):
     content: str
     rating: int
@@ -121,3 +75,66 @@ class ReviewModel(BaseModel):
     company_id: int
     user_id: int
     user_name: str
+
+
+class CompanyCreate(BaseModel):
+    name: str
+    description: str
+    staff: int
+    email: str
+    inn: str
+    phone_number: str
+    site: str
+
+class CompanyUpdate(BaseModel):
+    name: str
+    staff: int
+    description: str
+    email: str
+    inn: str
+    phone_number: str
+    site: str
+
+class CompanyModel(BaseModel):
+    id: int
+    name: str
+    rating: float
+    description: str
+    staff: int
+    email: str
+    inn: str
+    phone_number: str
+    site: str
+    user_id: int
+
+class CompanyDetail(BaseModel):
+    id: int
+    name: str
+    rating: float
+    description: str
+    staff: int
+    email: str
+    inn: str
+    phone_number: str
+    user_id: int
+    user_name: str
+    current_user_id: int
+    is_admin: bool
+    site: str
+    min_price: Optional[float]
+    max_price: Optional[float]
+    services: List[ServiceModel]
+    projects: List[ProjectModel]
+    reviews: List[ReviewModel]
+
+class CompanyListModel(BaseModel):
+    id: int
+    name: str
+    rating: float
+    min_price: Optional[float]
+    max_price: Optional[float]
+    project_count: int
+    review_count: int
+    description: str
+    user_name: str
+    site: str

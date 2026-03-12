@@ -30,6 +30,7 @@ ALTER TABLE public.companies ADD inn varchar(12) NOT NULL;
 ALTER TABLE public.companies ADD phone_number varchar(15) NOT NULL;
 ALTER TABLE public.companies ADD staff int8 NOT NULL;
 ALTER TABLE public.companies ADD description text NOT NULL;
+ALTER TABLE public.companies ADD site varchar(255) NOT NULL;
 
 ALTER TABLE public.companies ADD CONSTRAINT companies_unique UNIQUE (user_id,"name");
 
